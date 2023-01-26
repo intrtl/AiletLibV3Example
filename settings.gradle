@@ -1,0 +1,24 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+
+        maven {
+            url 'https://maven.pkg.github.com/intrtl/irlib'
+            credentials {
+                username 'github_username'
+                password 'github_token'
+            }
+        }
+    }
+}
+rootProject.name = "AiletV3Test"
+include ':app'
