@@ -7,7 +7,8 @@
     - [1.2.2 Метод Report](#122-метод-report)
     - [1.2.3 Метод Summary Report](#123-метод-summary-report)
     - [1.2.4 Метод Sync](#124-метод-sync)
-  - [1.3 Примеры отчетов](#13-примеры-отчетов)
+  - [1.3 Широковещательное (broadcast) сообщение](#13-широковещательное-broadcast-сообщение)
+  - [1.4 Примеры отчетов](#14-примеры-отчетов)
 
 ## 1.1. Вызов метода (на примере метода visit)
 
@@ -46,9 +47,7 @@ override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?
     }
 
 ```
-
-```Intent``` в ```onActivityResult``` содержит следующие ```extras```:
-
+```Intent.extras``` содержит следующие параметры:
 
 Параметр | Тип | Описание 
 ---------|-----|----------
@@ -56,7 +55,7 @@ action | String | Метод
 error | String | Тип ошибки (если была ошибка)
 message | String | Тест ошибки (если была ошибка)
 
-А так же ```data``` содержит ```uri``` файла отчета ([пример отчета](method_result.json))
+```Intent.data``` содержит ```uri``` файла отчета ([пример отчета](method_result.json))
 
 
 **Типы ошибок**
@@ -125,7 +124,67 @@ login           |String      | Логин пользователя в систе
 password        |String      | Пароль пользователя в системе Ailet     | + | 
 id  |String      | Идентификатор пользователя 
 
-## 1.3 Примеры отчетов
+## 1.3 Широковещательное (broadcast) сообщение 
+
+При получении всех данных по визту приложение Ailet генерирует широковещательное сообщение с ```intent.action = com.ailet.app.BROADCAST_WIDGETS_RECEIVED```.
+
+**Пример обработки сообщения**
+
+```kotlin
+broadcastReceiver = object : BroadcastReceiver() {
+    override fun onReceive(context: Context, intent: Intent) {
+        parseBroadcaseMesasge(intent)
+    }
+}
+
+registerReceiver(
+    broadcastReceiver,
+    IntentFilter(IR_BROADCAST_V3)
+)
+...
+
+private const val NOT_SET = "not set"
+private const val VISIT_ID = "visit_id"
+private const val INTERNAL_VISIT_ID = "internal_visit_id"
+private const val STORE_ID = "store_id"
+private const val TASK_ID = "task_id"
+private const val TOTAL_PHOTOS = "total_photos"
+private const val COMPLETED_PHOTOS = "completed_photos"
+private const val RESULT = "result"
+
+private fun parseBroadcaseMesasge(intent: Intent) {
+    val extras = intent.extras
+    val visitId = extras?.getString(VISIT_ID, NOT_SET)    
+    val internalVisitId = extras?.getString(INTERNAL_VISIT_ID, NOT_SET)    
+    val storeId = extras?.getString(STORE_ID, NOT_SET)
+    val taskId = extras?.getString(TASK_ID, NOT_SET)
+    val totalPhotos = extras?.getString(TOTAL_PHOTOS, NOT_SET)
+    val completedPhotos = extras?.getString(COMPLETED_PHOTOS, NOT_SET)
+    val result = extras?.getString(RESULT, null)
+
+    result?.let { uriString ->
+        try {
+            val fileFromUri = readFromUri(Uri.parse(uriString))
+        } catch (t: Throwable) {
+            t.printStackTrace()
+        }
+    }    
+}
+```
+
+**Intent extras**
+
+Параметр | Тип | Описание 
+---------|-----|----------
+internal_visit_id           |String      | Внутренний (Ailet) ИД визита
+visit_id           |String      | ИД визита
+store_id           |String      | ИД торговой точки
+user_id           |String      | ИД пользователя (Ailet)
+total_photos           |Int      | Количество фото в визите
+completed_photos           |Int      | Количество обработанных фото
+result           | String | Uri файла отчета ([пример отчета](broadcast_result.json))
+
+## 1.4 Примеры отчетов
 
 [Пример отчета, возвращаемого методами](method_result.json)
 
