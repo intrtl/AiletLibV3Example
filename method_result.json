@@ -1,0 +1,2627 @@
+{
+    "photosCounter": 1,
+    "scenesCounter": 1,
+    "notDetectedPhotosCounter": 0,
+    "notDetectedScenesCounter": 0,
+    "store_id": "1",
+    "user_id": "962",
+    "install_id": "47Z7ZHJR",
+    "local_visit_id": "dbf0f06cc14a7b-32452ad0",
+    "internal_visit_id": "dbf0f06cc14a7b-32452ad0",
+    "visit_id": "qq",
+    "status": "RESULT_OK",
+    "result": {
+        "visit_id": "qq",
+        "total_photos": 1,
+        "sended_photos": 1,
+        "code": "RESULT_OK",
+        "codeInt": 1,
+        "message": "Успешно обработан"
+    },
+    "photos": {
+        "dbf0f06cc14a7b-32452ad0-PH-000001": {
+            "error": {
+                "code": "RESULT_OK",
+                "codeInt": 1,
+                "message": "Успешно обработан"
+            },
+            "products": [
+                {
+                    "product_id": "1e2d809f-6421-11e7-965b-000d3a250e47",
+                    "facing": 18,
+                    "facing_group": 18,
+                    "price": 49.9,
+                    "price_type": 1,
+                    "category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                    "name": "Другой продукт (Бутылка), Бут, .310"
+                },
+                {
+                    "product_id": "5e713c9b30a5c-2537",
+                    "facing": 14,
+                    "facing_group": 14,
+                    "price": 44.9,
+                    "price_type": 1,
+                    "category_id": "5e5236908de87-4054",
+                    "name": "Другой соус и кетчуп стеклянная бутылка, стеклянная бутылка, .250"
+                },
+                {
+                    "product_id": "C0FE276C-16D7-4E85-A6CD-5FFC0CF834B9",
+                    "facing": 2,
+                    "facing_group": 2,
+                    "price": 129,
+                    "price_type": 1,
+                    "category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                    "name": "Другое, Бут, .680"
+                }
+            ],
+            "scene_type": "TG",
+            "scene_id": "dbf0f06cc14a7b-32452ad0-SC-000001",
+            "image_path": "/data/user/0/com.ailet.app/files/files/6/65/65e/65ed/65ed2/65ed249619bd43e56637ab994e43ebb3.jpg",
+            "image_url": "https://dairy-demo.intrtl.com/api/photo_raw/2023/04/11/dbf0f06cc14a7b-32452ad0/2023-04-11-16-53-27-7739-o.jpg"
+        }
+    },
+    "assortment_achievement": [
+        {
+            "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+            "brand_name": "Activia",
+            "id": "5b8e5be624962-3311",
+            "facing_fact": 0,
+            "facing_plan": 1,
+            "facing_real": 0,
+            "price": 0,
+            "price_type": 0,
+            "name": "ACTIVIA КРАСН АПЕЛЬСИН-СЕМЕНА ЧИА, формованный стакан, .170",
+            "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+            "category_name": "Modern Dairy"
+        },
+        {
+            "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+            "brand_name": "Activia",
+            "id": "5c73dc03ef183-9583",
+            "facing_fact": 0,
+            "facing_plan": 1,
+            "facing_real": 0,
+            "price": 0,
+            "price_type": 0,
+            "name": "ACTIVIA МАНГО-ПАПАЙЯ-СЕМЕНА ЧИА, формованный стакан, .170",
+            "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+            "category_name": "Modern Dairy"
+        },
+        {
+            "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+            "brand_name": "Activia",
+            "id": "5c73dc0386e84-6266",
+            "facing_fact": 0,
+            "facing_plan": 1,
+            "facing_real": 0,
+            "price": 0,
+            "price_type": 0,
+            "name": "ACTIVIA ПЕРСИК-ЛИЧИ-КИНОА, формованный стакан, .150",
+            "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+            "category_name": "Modern Dairy"
+        },
+        {
+            "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+            "brand_name": "Activia",
+            "id": "5cd2eaff54987-5574",
+            "facing_fact": 0,
+            "facing_plan": 1,
+            "facing_real": 0,
+            "price": 0,
+            "price_type": 0,
+            "name": "ACTIVIA ПИТ ЛАЙМ-МЯТА, ПЭТ, .290",
+            "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+            "category_name": "Modern Dairy"
+        },
+        {
+            "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+            "brand_name": "Activia",
+            "id": "5c73dc023ae0c-5944",
+            "facing_fact": 0,
+            "facing_plan": 1,
+            "facing_real": 0,
+            "price": 0,
+            "price_type": 0,
+            "name": "ACTIVIA СМУССИ КЛУБ-АНАН-МАНГ-АМАР-ПАПАЙ, Стакан, .250",
+            "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+            "category_name": "Modern Dairy"
+        },
+        {
+            "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+            "brand_name": "Activia",
+            "id": "5d63e7085ce79-6215",
+            "facing_fact": 0,
+            "facing_plan": 1,
+            "facing_real": 0,
+            "price": 0,
+            "price_type": 0,
+            "name": "ACTIVIA ложковый йогурт АНАН-БАН-КУРКУМ-ИМБ-СЕМ БАЗИЛ, формованный стакан, .140",
+            "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+            "category_name": "Modern Dairy"
+        },
+        {
+            "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+            "brand_name": "Activia",
+            "id": "5d63e70874e4d-8946",
+            "facing_fact": 0,
+            "facing_plan": 1,
+            "facing_real": 0,
+            "price": 0,
+            "price_type": 0,
+            "name": "ACTIVIA ложковый йогурт КИВИ-ЯБЛ-ВИНОГР-МАТЧА-СЕМ ЧИА, формованный стакан, .140",
+            "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+            "category_name": "Modern Dairy"
+        },
+        {
+            "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+            "brand_name": "Activia",
+            "id": "5d6654df5976d-9108",
+            "facing_fact": 0,
+            "facing_plan": 1,
+            "facing_real": 0,
+            "price": 0,
+            "price_type": 0,
+            "name": "ACTIVIA питьевой йогурт (5 вкусов), Бут, .200",
+            "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+            "category_name": "Modern Dairy"
+        },
+        {
+            "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+            "brand_name": "Activia",
+            "id": "5d63e70798a36-5298",
+            "facing_fact": 0,
+            "facing_plan": 1,
+            "facing_real": 0,
+            "price": 0,
+            "price_type": 0,
+            "name": "ACTIVIA питьевой йогурт ВИШ-ЗЕЛГРЕЧ-ОВЕС-ГРАН-АС, Бут, .200",
+            "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+            "category_name": "Modern Dairy"
+        },
+        {
+            "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+            "brand_name": "Activia",
+            "id": "5d63e707adb88-6851",
+            "facing_fact": 0,
+            "facing_plan": 1,
+            "facing_real": 0,
+            "price": 0,
+            "price_type": 0,
+            "name": "ACTIVIA питьевой йогурт КИВ-ОВЕС-ВИНОГР-ЧИА-МАТЧ, Бут, .200",
+            "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+            "category_name": "Modern Dairy"
+        },
+        {
+            "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+            "brand_name": "Activia",
+            "id": "4084fec9-166f-4cdd-9a44-7589df4f4b4e",
+            "facing_fact": 0,
+            "facing_plan": 1,
+            "facing_real": 0,
+            "price": 0,
+            "price_type": 0,
+            "name": "Activia Пит c бананом и овсянкой, Стакан, .250",
+            "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+            "category_name": "Modern Dairy"
+        },
+        {
+            "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+            "brand_name": "Activia",
+            "id": "B3D1FDDB-1AE2-48EB-BFE9-6136EE88A846",
+            "facing_fact": 0,
+            "facing_plan": 1,
+            "facing_real": 0,
+            "price": 0,
+            "price_type": 0,
+            "name": "Activia Пит вишня-маракуйя, Стакан, .250",
+            "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+            "category_name": "Modern Dairy"
+        },
+        {
+            "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+            "brand_name": "Activia",
+            "id": "CD0B91D9-A93A-4A40-ACEB-346CE90B8A0A",
+            "facing_fact": 0,
+            "facing_plan": 1,
+            "facing_real": 0,
+            "price": 0,
+            "price_type": 0,
+            "name": "Activia Пит злаки-семена, Стакан, .250",
+            "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+            "category_name": "Modern Dairy"
+        },
+        {
+            "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+            "brand_name": "Activia",
+            "id": "5bd8288f4cb97-5365",
+            "facing_fact": 0,
+            "facing_plan": 1,
+            "facing_real": 0,
+            "price": 0,
+            "price_type": 0,
+            "name": "Activia Пит пчн груша-5 зл-сем льна_Q3_2019, Бут, .290",
+            "product_category_id": "5e5236ee77ac4-7319",
+            "category_name": "OTHER_H"
+        },
+        {
+            "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+            "brand_name": "Activia",
+            "id": "5b55884d26a5b-6690",
+            "facing_fact": 0,
+            "facing_plan": 1,
+            "facing_real": 0,
+            "price": 0,
+            "price_type": 0,
+            "name": "Activia Пит с ананасом, Бут, .290",
+            "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+            "category_name": "Modern Dairy"
+        },
+        {
+            "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+            "brand_name": "Activia",
+            "id": "8d675e6a-d20c-4e26-97a8-cea85f2f12f0",
+            "facing_fact": 0,
+            "facing_plan": 1,
+            "facing_real": 0,
+            "price": 0,
+            "price_type": 0,
+            "name": "Activia Пит с ананасом, Бут, .290",
+            "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+            "category_name": "Modern Dairy"
+        },
+        {
+            "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+            "brand_name": "Activia",
+            "id": "482be098-b7f7-4be4-9d69-09a75a52157c",
+            "facing_fact": 0,
+            "facing_plan": 1,
+            "facing_real": 0,
+            "price": 0,
+            "price_type": 0,
+            "name": "Activia Пит с брусникой и клубникой, Стакан, .250",
+            "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+            "category_name": "Modern Dairy"
+        },
+        {
+            "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+            "brand_name": "Activia",
+            "id": "3E091C29-74B1-4D39-82C6-E538A0D8D785",
+            "facing_fact": 0,
+            "facing_plan": 1,
+            "facing_real": 0,
+            "price": 0,
+            "price_type": 0,
+            "name": "Activia Пит с вишней и сем. чиа, Бут, .290",
+            "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+            "category_name": "Modern Dairy"
+        },
+        {
+            "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+            "brand_name": "Activia",
+            "id": "141e9f56-d7ed-4137-9c68-fbe61dfb0e36",
+            "facing_fact": 0,
+            "facing_plan": 1,
+            "facing_real": 0,
+            "price": 0,
+            "price_type": 0,
+            "name": "Activia Пит с дыней и земляникой, Бут, .290",
+            "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+            "category_name": "Modern Dairy"
+        },
+        {
+            "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+            "brand_name": "Activia",
+            "id": "5b558847ce3a4-1502",
+            "facing_fact": 0,
+            "facing_plan": 1,
+            "facing_real": 0,
+            "price": 0,
+            "price_type": 0,
+            "name": "Activia Пит с клубникой и земляникой, Бут, .290",
+            "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+            "category_name": "Modern Dairy"
+        },
+        {
+            "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+            "brand_name": "Activia",
+            "id": "5b55884e307a2-2808",
+            "facing_fact": 0,
+            "facing_plan": 1,
+            "facing_real": 0,
+            "price": 0,
+            "price_type": 0,
+            "name": "Activia Пит с манго, ПЭТ, .290",
+            "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+            "category_name": "Modern Dairy"
+        },
+        {
+            "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+            "brand_name": "Activia",
+            "id": "5b55884d0702e-5890",
+            "facing_fact": 0,
+            "facing_plan": 1,
+            "facing_real": 0,
+            "price": 0,
+            "price_type": 0,
+            "name": "Activia Пит с черносливом, Бут, .290",
+            "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+            "category_name": "Modern Dairy"
+        },
+        {
+            "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+            "brand_name": "Activia",
+            "id": "5b55884d5bd3c-8791",
+            "facing_fact": 0,
+            "facing_plan": 1,
+            "facing_real": 0,
+            "price": 0,
+            "price_type": 0,
+            "name": "Activia Пит с яблоком и злаками, Бут, .290",
+            "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+            "category_name": "Modern Dairy"
+        },
+        {
+            "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+            "brand_name": "Activia",
+            "id": "30d1b85a-6702-4f75-829d-cd11e1ef61bd",
+            "facing_fact": 0,
+            "facing_plan": 1,
+            "facing_real": 0,
+            "price": 0,
+            "price_type": 0,
+            "name": "Activia Пит с яблоком и злаками, Бут, .290",
+            "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+            "category_name": "Modern Dairy"
+        },
+        {
+            "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+            "brand_name": "Activia",
+            "id": "5b55884d836ec-1243",
+            "facing_fact": 0,
+            "facing_plan": 1,
+            "facing_real": 0,
+            "price": 0,
+            "price_type": 0,
+            "name": "Activia Пит со злаками, Бут, .290",
+            "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+            "category_name": "Modern Dairy"
+        },
+        {
+            "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+            "brand_name": "Activia",
+            "id": "5a09e45d-a2b2-4c97-853f-d34036ba5715",
+            "facing_fact": 0,
+            "facing_plan": 1,
+            "facing_real": 0,
+            "price": 0,
+            "price_type": 0,
+            "name": "Activia Пит, Стакан, .250",
+            "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+            "category_name": "Modern Dairy"
+        },
+        {
+            "brand_id": "a45f430d-9e3b-11e7-a5c2-000d3a250e47",
+            "brand_name": "Другое",
+            "id": "C0FE276C-16D7-4E85-A6CD-5FFC0CF834B9",
+            "facing_fact": 2,
+            "facing_plan": 0,
+            "facing_real": 2,
+            "price": 129,
+            "price_type": 1,
+            "name": "Другое, Бут, .680",
+            "product_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+            "category_name": "Dairy"
+        },
+        {
+            "brand_id": "cc2b6315-5356-11e7-94af-000d3a250e47",
+            "brand_name": "Другой",
+            "id": "1e2d809f-6421-11e7-965b-000d3a250e47",
+            "facing_fact": 18,
+            "facing_plan": 0,
+            "facing_real": 18,
+            "price": 49.9,
+            "price_type": 1,
+            "name": "Другой продукт (Бутылка), Бут, .310",
+            "product_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+            "category_name": "Dairy"
+        },
+        {
+            "brand_id": "7ca67ae3-86ad-11e8-a73f-9e637f7bd86e",
+            "brand_name": "Другой",
+            "id": "5e713c9b30a5c-2537",
+            "facing_fact": 14,
+            "facing_plan": 0,
+            "facing_real": 14,
+            "price": 44.9,
+            "price_type": 1,
+            "name": "Другой соус и кетчуп стеклянная бутылка, стеклянная бутылка, .250",
+            "product_category_id": "5e5236908de87-4054",
+            "category_name": "GROCERY"
+        }
+    ],
+    "assortment_achievement_by_metrics": [
+        {
+            "products": [
+                {
+                    "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                    "brand_name": "Activia",
+                    "id": "5b8e5be624962-3311",
+                    "facing_fact": 0,
+                    "facing_plan": 1,
+                    "facing_real": 0,
+                    "price": 0,
+                    "price_type": 0,
+                    "name": "ACTIVIA КРАСН АПЕЛЬСИН-СЕМЕНА ЧИА, формованный стакан, .170",
+                    "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+                    "category_name": "Modern Dairy"
+                },
+                {
+                    "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                    "brand_name": "Activia",
+                    "id": "5c73dc03ef183-9583",
+                    "facing_fact": 0,
+                    "facing_plan": 1,
+                    "facing_real": 0,
+                    "price": 0,
+                    "price_type": 0,
+                    "name": "ACTIVIA МАНГО-ПАПАЙЯ-СЕМЕНА ЧИА, формованный стакан, .170",
+                    "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+                    "category_name": "Modern Dairy"
+                },
+                {
+                    "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                    "brand_name": "Activia",
+                    "id": "5c73dc0386e84-6266",
+                    "facing_fact": 0,
+                    "facing_plan": 1,
+                    "facing_real": 0,
+                    "price": 0,
+                    "price_type": 0,
+                    "name": "ACTIVIA ПЕРСИК-ЛИЧИ-КИНОА, формованный стакан, .150",
+                    "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+                    "category_name": "Modern Dairy"
+                },
+                {
+                    "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                    "brand_name": "Activia",
+                    "id": "5cd2eaff54987-5574",
+                    "facing_fact": 0,
+                    "facing_plan": 1,
+                    "facing_real": 0,
+                    "price": 0,
+                    "price_type": 0,
+                    "name": "ACTIVIA ПИТ ЛАЙМ-МЯТА, ПЭТ, .290",
+                    "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+                    "category_name": "Modern Dairy"
+                },
+                {
+                    "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                    "brand_name": "Activia",
+                    "id": "5c73dc023ae0c-5944",
+                    "facing_fact": 0,
+                    "facing_plan": 1,
+                    "facing_real": 0,
+                    "price": 0,
+                    "price_type": 0,
+                    "name": "ACTIVIA СМУССИ КЛУБ-АНАН-МАНГ-АМАР-ПАПАЙ, Стакан, .250",
+                    "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+                    "category_name": "Modern Dairy"
+                },
+                {
+                    "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                    "brand_name": "Activia",
+                    "id": "5d63e7085ce79-6215",
+                    "facing_fact": 0,
+                    "facing_plan": 1,
+                    "facing_real": 0,
+                    "price": 0,
+                    "price_type": 0,
+                    "name": "ACTIVIA ложковый йогурт АНАН-БАН-КУРКУМ-ИМБ-СЕМ БАЗИЛ, формованный стакан, .140",
+                    "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+                    "category_name": "Modern Dairy"
+                },
+                {
+                    "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                    "brand_name": "Activia",
+                    "id": "5d63e70874e4d-8946",
+                    "facing_fact": 0,
+                    "facing_plan": 1,
+                    "facing_real": 0,
+                    "price": 0,
+                    "price_type": 0,
+                    "name": "ACTIVIA ложковый йогурт КИВИ-ЯБЛ-ВИНОГР-МАТЧА-СЕМ ЧИА, формованный стакан, .140",
+                    "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+                    "category_name": "Modern Dairy"
+                },
+                {
+                    "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                    "brand_name": "Activia",
+                    "id": "5d6654df5976d-9108",
+                    "facing_fact": 0,
+                    "facing_plan": 1,
+                    "facing_real": 0,
+                    "price": 0,
+                    "price_type": 0,
+                    "name": "ACTIVIA питьевой йогурт (5 вкусов), Бут, .200",
+                    "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+                    "category_name": "Modern Dairy"
+                },
+                {
+                    "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                    "brand_name": "Activia",
+                    "id": "5d63e70798a36-5298",
+                    "facing_fact": 0,
+                    "facing_plan": 1,
+                    "facing_real": 0,
+                    "price": 0,
+                    "price_type": 0,
+                    "name": "ACTIVIA питьевой йогурт ВИШ-ЗЕЛГРЕЧ-ОВЕС-ГРАН-АС, Бут, .200",
+                    "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+                    "category_name": "Modern Dairy"
+                },
+                {
+                    "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                    "brand_name": "Activia",
+                    "id": "5d63e707adb88-6851",
+                    "facing_fact": 0,
+                    "facing_plan": 1,
+                    "facing_real": 0,
+                    "price": 0,
+                    "price_type": 0,
+                    "name": "ACTIVIA питьевой йогурт КИВ-ОВЕС-ВИНОГР-ЧИА-МАТЧ, Бут, .200",
+                    "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+                    "category_name": "Modern Dairy"
+                },
+                {
+                    "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                    "brand_name": "Activia",
+                    "id": "4084fec9-166f-4cdd-9a44-7589df4f4b4e",
+                    "facing_fact": 0,
+                    "facing_plan": 1,
+                    "facing_real": 0,
+                    "price": 0,
+                    "price_type": 0,
+                    "name": "Activia Пит c бананом и овсянкой, Стакан, .250",
+                    "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                    "category_name": "Modern Dairy"
+                },
+                {
+                    "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                    "brand_name": "Activia",
+                    "id": "B3D1FDDB-1AE2-48EB-BFE9-6136EE88A846",
+                    "facing_fact": 0,
+                    "facing_plan": 1,
+                    "facing_real": 0,
+                    "price": 0,
+                    "price_type": 0,
+                    "name": "Activia Пит вишня-маракуйя, Стакан, .250",
+                    "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                    "category_name": "Modern Dairy"
+                },
+                {
+                    "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                    "brand_name": "Activia",
+                    "id": "CD0B91D9-A93A-4A40-ACEB-346CE90B8A0A",
+                    "facing_fact": 0,
+                    "facing_plan": 1,
+                    "facing_real": 0,
+                    "price": 0,
+                    "price_type": 0,
+                    "name": "Activia Пит злаки-семена, Стакан, .250",
+                    "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                    "category_name": "Modern Dairy"
+                },
+                {
+                    "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                    "brand_name": "Activia",
+                    "id": "5bd8288f4cb97-5365",
+                    "facing_fact": 0,
+                    "facing_plan": 1,
+                    "facing_real": 0,
+                    "price": 0,
+                    "price_type": 0,
+                    "name": "Activia Пит пчн груша-5 зл-сем льна_Q3_2019, Бут, .290",
+                    "product_category_id": "5e5236ee77ac4-7319",
+                    "category_name": "OTHER_H"
+                },
+                {
+                    "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                    "brand_name": "Activia",
+                    "id": "5b55884d26a5b-6690",
+                    "facing_fact": 0,
+                    "facing_plan": 1,
+                    "facing_real": 0,
+                    "price": 0,
+                    "price_type": 0,
+                    "name": "Activia Пит с ананасом, Бут, .290",
+                    "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                    "category_name": "Modern Dairy"
+                },
+                {
+                    "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                    "brand_name": "Activia",
+                    "id": "8d675e6a-d20c-4e26-97a8-cea85f2f12f0",
+                    "facing_fact": 0,
+                    "facing_plan": 1,
+                    "facing_real": 0,
+                    "price": 0,
+                    "price_type": 0,
+                    "name": "Activia Пит с ананасом, Бут, .290",
+                    "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                    "category_name": "Modern Dairy"
+                },
+                {
+                    "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                    "brand_name": "Activia",
+                    "id": "482be098-b7f7-4be4-9d69-09a75a52157c",
+                    "facing_fact": 0,
+                    "facing_plan": 1,
+                    "facing_real": 0,
+                    "price": 0,
+                    "price_type": 0,
+                    "name": "Activia Пит с брусникой и клубникой, Стакан, .250",
+                    "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                    "category_name": "Modern Dairy"
+                },
+                {
+                    "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                    "brand_name": "Activia",
+                    "id": "3E091C29-74B1-4D39-82C6-E538A0D8D785",
+                    "facing_fact": 0,
+                    "facing_plan": 1,
+                    "facing_real": 0,
+                    "price": 0,
+                    "price_type": 0,
+                    "name": "Activia Пит с вишней и сем. чиа, Бут, .290",
+                    "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                    "category_name": "Modern Dairy"
+                },
+                {
+                    "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                    "brand_name": "Activia",
+                    "id": "141e9f56-d7ed-4137-9c68-fbe61dfb0e36",
+                    "facing_fact": 0,
+                    "facing_plan": 1,
+                    "facing_real": 0,
+                    "price": 0,
+                    "price_type": 0,
+                    "name": "Activia Пит с дыней и земляникой, Бут, .290",
+                    "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                    "category_name": "Modern Dairy"
+                },
+                {
+                    "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                    "brand_name": "Activia",
+                    "id": "5b558847ce3a4-1502",
+                    "facing_fact": 0,
+                    "facing_plan": 1,
+                    "facing_real": 0,
+                    "price": 0,
+                    "price_type": 0,
+                    "name": "Activia Пит с клубникой и земляникой, Бут, .290",
+                    "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                    "category_name": "Modern Dairy"
+                },
+                {
+                    "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                    "brand_name": "Activia",
+                    "id": "5b55884e307a2-2808",
+                    "facing_fact": 0,
+                    "facing_plan": 1,
+                    "facing_real": 0,
+                    "price": 0,
+                    "price_type": 0,
+                    "name": "Activia Пит с манго, ПЭТ, .290",
+                    "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                    "category_name": "Modern Dairy"
+                },
+                {
+                    "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                    "brand_name": "Activia",
+                    "id": "5b55884d0702e-5890",
+                    "facing_fact": 0,
+                    "facing_plan": 1,
+                    "facing_real": 0,
+                    "price": 0,
+                    "price_type": 0,
+                    "name": "Activia Пит с черносливом, Бут, .290",
+                    "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                    "category_name": "Modern Dairy"
+                },
+                {
+                    "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                    "brand_name": "Activia",
+                    "id": "5b55884d5bd3c-8791",
+                    "facing_fact": 0,
+                    "facing_plan": 1,
+                    "facing_real": 0,
+                    "price": 0,
+                    "price_type": 0,
+                    "name": "Activia Пит с яблоком и злаками, Бут, .290",
+                    "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                    "category_name": "Modern Dairy"
+                },
+                {
+                    "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                    "brand_name": "Activia",
+                    "id": "30d1b85a-6702-4f75-829d-cd11e1ef61bd",
+                    "facing_fact": 0,
+                    "facing_plan": 1,
+                    "facing_real": 0,
+                    "price": 0,
+                    "price_type": 0,
+                    "name": "Activia Пит с яблоком и злаками, Бут, .290",
+                    "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                    "category_name": "Modern Dairy"
+                },
+                {
+                    "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                    "brand_name": "Activia",
+                    "id": "5b55884d836ec-1243",
+                    "facing_fact": 0,
+                    "facing_plan": 1,
+                    "facing_real": 0,
+                    "price": 0,
+                    "price_type": 0,
+                    "name": "Activia Пит со злаками, Бут, .290",
+                    "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                    "category_name": "Modern Dairy"
+                },
+                {
+                    "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                    "brand_name": "Activia",
+                    "id": "5a09e45d-a2b2-4c97-853f-d34036ba5715",
+                    "facing_fact": 0,
+                    "facing_plan": 1,
+                    "facing_real": 0,
+                    "price": 0,
+                    "price_type": 0,
+                    "name": "Activia Пит, Стакан, .250",
+                    "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                    "category_name": "Modern Dairy"
+                },
+                {
+                    "brand_id": "a45f430d-9e3b-11e7-a5c2-000d3a250e47",
+                    "brand_name": "Другое",
+                    "id": "C0FE276C-16D7-4E85-A6CD-5FFC0CF834B9",
+                    "facing_fact": 2,
+                    "facing_plan": 0,
+                    "facing_real": 2,
+                    "price": 129,
+                    "price_type": 1,
+                    "name": "Другое, Бут, .680",
+                    "product_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                    "category_name": "Dairy"
+                },
+                {
+                    "brand_id": "cc2b6315-5356-11e7-94af-000d3a250e47",
+                    "brand_name": "Другой",
+                    "id": "1e2d809f-6421-11e7-965b-000d3a250e47",
+                    "facing_fact": 18,
+                    "facing_plan": 0,
+                    "facing_real": 18,
+                    "price": 49.9,
+                    "price_type": 1,
+                    "name": "Другой продукт (Бутылка), Бут, .310",
+                    "product_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                    "category_name": "Dairy"
+                },
+                {
+                    "brand_id": "7ca67ae3-86ad-11e8-a73f-9e637f7bd86e",
+                    "brand_name": "Другой",
+                    "id": "5e713c9b30a5c-2537",
+                    "facing_fact": 14,
+                    "facing_plan": 0,
+                    "facing_real": 14,
+                    "price": 44.9,
+                    "price_type": 1,
+                    "name": "Другой соус и кетчуп стеклянная бутылка, стеклянная бутылка, .250",
+                    "product_category_id": "5e5236908de87-4054",
+                    "category_name": "GROCERY"
+                }
+            ],
+            "assortment_achievement_name": "General"
+        }
+    ],
+    "share_shelf": {
+        "share_shelf_by_visit": [
+            {
+                "plan": 0,
+                "percent": 0,
+                "value": 0,
+                "value_previous": 0,
+                "numerator": 0,
+                "denominator": 0
+            }
+        ],
+        "share_shelf_by_macrocategories": [],
+        "share_shelf_by_categories": [],
+        "share_shelf_by_brands": [],
+        "share_shelf_type": "facing_cm",
+        "share_shelf_name": "sos_2"
+    },
+    "share_shelf_by_metrics": [
+        {
+            "share_shelf_by_visit": [
+                {
+                    "plan": 0,
+                    "percent": 0,
+                    "value": 0,
+                    "value_previous": 0,
+                    "numerator": 0,
+                    "denominator": 0
+                }
+            ],
+            "share_shelf_by_macrocategories": [],
+            "share_shelf_by_categories": [],
+            "share_shelf_by_brands": [],
+            "share_shelf_type": "facing_cm",
+            "share_shelf_name": "sos_2"
+        },
+        {
+            "share_shelf_by_visit": [
+                {
+                    "plan": 0,
+                    "percent": 0,
+                    "value": 100,
+                    "value_previous": 100,
+                    "numerator": 34,
+                    "denominator": 34
+                }
+            ],
+            "share_shelf_by_macrocategories": [
+                {
+                    "facing": "20.0",
+                    "product_macro_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                    "product_macro_category_name": "Dairy",
+                    "value": 20,
+                    "percent": 100,
+                    "matched": 20
+                },
+                {
+                    "facing": "14.0",
+                    "product_macro_category_id": "5e5236908de87-4054",
+                    "product_macro_category_name": "GROCERY",
+                    "value": 14,
+                    "percent": 100,
+                    "matched": 14
+                }
+            ],
+            "share_shelf_by_categories": [
+                {
+                    "facing": "20.0",
+                    "macro_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                    "product_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                    "product_category_name": "Dairy",
+                    "value": 20,
+                    "percent": 100,
+                    "matched": 20
+                },
+                {
+                    "facing": "14.0",
+                    "macro_category_id": "5e5236908de87-4054",
+                    "product_category_id": "5e5236908de87-4054",
+                    "product_category_name": "GROCERY",
+                    "value": 14,
+                    "percent": 100,
+                    "matched": 14
+                }
+            ],
+            "share_shelf_by_brands": [
+                {
+                    "facing": "2.0",
+                    "product_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                    "product_category_name": "Dairy",
+                    "brand_id": "a45f430d-9e3b-11e7-a5c2-000d3a250e47",
+                    "brand_name": "Другое",
+                    "is_own": 0,
+                    "value": 2,
+                    "percent": 10
+                },
+                {
+                    "facing": "18.0",
+                    "product_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                    "product_category_name": "Dairy",
+                    "brand_id": "cc2b6315-5356-11e7-94af-000d3a250e47",
+                    "brand_name": "Другой",
+                    "is_own": 0,
+                    "value": 18,
+                    "percent": 90
+                },
+                {
+                    "facing": "14.0",
+                    "product_category_id": "5e5236908de87-4054",
+                    "product_category_name": "GROCERY",
+                    "brand_id": "7ca67ae3-86ad-11e8-a73f-9e637f7bd86e",
+                    "brand_name": "Другой",
+                    "is_own": 0,
+                    "value": 14,
+                    "percent": 100
+                }
+            ],
+            "share_shelf_type": "facing",
+            "share_shelf_name": "SOS"
+        },
+        {
+            "share_shelf_by_visit": [
+                {
+                    "plan": 0,
+                    "percent": 0,
+                    "value": 0,
+                    "value_previous": 0,
+                    "numerator": 0,
+                    "denominator": 0
+                }
+            ],
+            "share_shelf_by_macrocategories": [],
+            "share_shelf_by_categories": [],
+            "share_shelf_by_brands": [],
+            "share_shelf_type": "facing",
+            "share_shelf_name": "sos_11"
+        },
+        {
+            "share_shelf_by_visit": [
+                {
+                    "plan": 0,
+                    "percent": 0,
+                    "value": 0,
+                    "value_previous": 0,
+                    "numerator": 0,
+                    "denominator": 0
+                }
+            ],
+            "share_shelf_by_macrocategories": [],
+            "share_shelf_by_categories": [],
+            "share_shelf_by_brands": [],
+            "share_shelf_type": "facing_cm",
+            "share_shelf_name": "sos_3_empty"
+        },
+        {
+            "share_shelf_by_visit": [
+                {
+                    "plan": 0,
+                    "percent": 0,
+                    "value": 0,
+                    "value_previous": 0,
+                    "numerator": 0,
+                    "denominator": 0
+                }
+            ],
+            "share_shelf_by_macrocategories": [],
+            "share_shelf_by_categories": [],
+            "share_shelf_by_brands": [],
+            "share_shelf_type": "facing",
+            "share_shelf_name": "12_1_demo"
+        },
+        {
+            "share_shelf_by_visit": [
+                {
+                    "plan": 0,
+                    "percent": 0,
+                    "value": 0,
+                    "value_previous": 0,
+                    "numerator": 0,
+                    "denominator": 0
+                }
+            ],
+            "share_shelf_by_macrocategories": [],
+            "share_shelf_by_categories": [],
+            "share_shelf_by_brands": [],
+            "share_shelf_type": "column_cm",
+            "share_shelf_name": "1703_test_column_cm"
+        },
+        {
+            "share_shelf_by_visit": [
+                {
+                    "plan": 0,
+                    "percent": 0,
+                    "value": 0,
+                    "value_previous": 0,
+                    "numerator": 0,
+                    "denominator": 0
+                }
+            ],
+            "share_shelf_by_macrocategories": [],
+            "share_shelf_by_categories": [],
+            "share_shelf_by_brands": [],
+            "share_shelf_type": "facing",
+            "share_shelf_name": "test_1703_fasing"
+        },
+        {
+            "share_shelf_by_visit": [
+                {
+                    "plan": 0,
+                    "percent": 0,
+                    "value": 0,
+                    "value_previous": 0,
+                    "numerator": 0,
+                    "denominator": 0
+                }
+            ],
+            "share_shelf_by_macrocategories": [],
+            "share_shelf_by_categories": [],
+            "share_shelf_by_brands": [],
+            "share_shelf_type": "facing",
+            "share_shelf_name": "Длинное наименование метрики для проверки отображения"
+        },
+        {
+            "share_shelf_by_visit": [
+                {
+                    "plan": 0,
+                    "percent": 0,
+                    "value": 100,
+                    "value_previous": 100,
+                    "numerator": 34,
+                    "denominator": 34
+                }
+            ],
+            "share_shelf_by_macrocategories": [
+                {
+                    "facing": "20.0",
+                    "product_macro_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                    "product_macro_category_name": "Dairy",
+                    "value": 20,
+                    "percent": 100,
+                    "matched": 20
+                },
+                {
+                    "facing": "14.0",
+                    "product_macro_category_id": "5e5236908de87-4054",
+                    "product_macro_category_name": "GROCERY",
+                    "value": 14,
+                    "percent": 100,
+                    "matched": 14
+                }
+            ],
+            "share_shelf_by_categories": [
+                {
+                    "facing": "20.0",
+                    "macro_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                    "product_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                    "product_category_name": "Dairy",
+                    "value": 20,
+                    "percent": 100,
+                    "matched": 20
+                },
+                {
+                    "facing": "14.0",
+                    "macro_category_id": "5e5236908de87-4054",
+                    "product_category_id": "5e5236908de87-4054",
+                    "product_category_name": "GROCERY",
+                    "value": 14,
+                    "percent": 100,
+                    "matched": 14
+                }
+            ],
+            "share_shelf_by_brands": [
+                {
+                    "facing": "2.0",
+                    "product_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                    "product_category_name": "Dairy",
+                    "brand_id": "a45f430d-9e3b-11e7-a5c2-000d3a250e47",
+                    "brand_name": "Другое",
+                    "is_own": 0,
+                    "value": 2,
+                    "percent": 10
+                },
+                {
+                    "facing": "18.0",
+                    "product_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                    "product_category_name": "Dairy",
+                    "brand_id": "cc2b6315-5356-11e7-94af-000d3a250e47",
+                    "brand_name": "Другой",
+                    "is_own": 0,
+                    "value": 18,
+                    "percent": 90
+                },
+                {
+                    "facing": "14.0",
+                    "product_category_id": "5e5236908de87-4054",
+                    "product_category_name": "GROCERY",
+                    "brand_id": "7ca67ae3-86ad-11e8-a73f-9e637f7bd86e",
+                    "brand_name": "Другой",
+                    "is_own": 0,
+                    "value": 14,
+                    "percent": 100
+                }
+            ],
+            "share_shelf_type": "facing",
+            "share_shelf_name": "Какао"
+        },
+        {
+            "share_shelf_by_visit": [
+                {
+                    "plan": 0,
+                    "percent": 0,
+                    "value": 100,
+                    "value_previous": 100,
+                    "numerator": 34,
+                    "denominator": 34
+                }
+            ],
+            "share_shelf_by_macrocategories": [
+                {
+                    "facing": "20.0",
+                    "product_macro_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                    "product_macro_category_name": "Dairy",
+                    "value": 20,
+                    "percent": 100,
+                    "matched": 20
+                },
+                {
+                    "facing": "14.0",
+                    "product_macro_category_id": "5e5236908de87-4054",
+                    "product_macro_category_name": "GROCERY",
+                    "value": 14,
+                    "percent": 100,
+                    "matched": 14
+                }
+            ],
+            "share_shelf_by_categories": [
+                {
+                    "facing": "20.0",
+                    "macro_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                    "product_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                    "product_category_name": "Dairy",
+                    "value": 20,
+                    "percent": 100,
+                    "matched": 20
+                },
+                {
+                    "facing": "14.0",
+                    "macro_category_id": "5e5236908de87-4054",
+                    "product_category_id": "5e5236908de87-4054",
+                    "product_category_name": "GROCERY",
+                    "value": 14,
+                    "percent": 100,
+                    "matched": 14
+                }
+            ],
+            "share_shelf_by_brands": [
+                {
+                    "facing": "2.0",
+                    "product_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                    "product_category_name": "Dairy",
+                    "brand_id": "a45f430d-9e3b-11e7-a5c2-000d3a250e47",
+                    "brand_name": "Другое",
+                    "is_own": 0,
+                    "value": 2,
+                    "percent": 10
+                },
+                {
+                    "facing": "18.0",
+                    "product_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                    "product_category_name": "Dairy",
+                    "brand_id": "cc2b6315-5356-11e7-94af-000d3a250e47",
+                    "brand_name": "Другой",
+                    "is_own": 0,
+                    "value": 18,
+                    "percent": 90
+                },
+                {
+                    "facing": "14.0",
+                    "product_category_id": "5e5236908de87-4054",
+                    "product_category_name": "GROCERY",
+                    "brand_id": "7ca67ae3-86ad-11e8-a73f-9e637f7bd86e",
+                    "brand_name": "Другой",
+                    "is_own": 0,
+                    "value": 14,
+                    "percent": 100
+                }
+            ],
+            "share_shelf_type": "facing",
+            "share_shelf_name": "Соль"
+        },
+        {
+            "share_shelf_by_visit": [
+                {
+                    "plan": 0,
+                    "percent": 0,
+                    "value": 100,
+                    "value_previous": 100,
+                    "numerator": 34,
+                    "denominator": 34
+                }
+            ],
+            "share_shelf_by_macrocategories": [
+                {
+                    "facing": "20.0",
+                    "product_macro_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                    "product_macro_category_name": "Dairy",
+                    "value": 20,
+                    "percent": 100,
+                    "matched": 20
+                },
+                {
+                    "facing": "14.0",
+                    "product_macro_category_id": "5e5236908de87-4054",
+                    "product_macro_category_name": "GROCERY",
+                    "value": 14,
+                    "percent": 100,
+                    "matched": 14
+                }
+            ],
+            "share_shelf_by_categories": [
+                {
+                    "facing": "20.0",
+                    "macro_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                    "product_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                    "product_category_name": "Dairy",
+                    "value": 20,
+                    "percent": 100,
+                    "matched": 20
+                },
+                {
+                    "facing": "14.0",
+                    "macro_category_id": "5e5236908de87-4054",
+                    "product_category_id": "5e5236908de87-4054",
+                    "product_category_name": "GROCERY",
+                    "value": 14,
+                    "percent": 100,
+                    "matched": 14
+                }
+            ],
+            "share_shelf_by_brands": [
+                {
+                    "facing": "2.0",
+                    "product_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                    "product_category_name": "Dairy",
+                    "brand_id": "a45f430d-9e3b-11e7-a5c2-000d3a250e47",
+                    "brand_name": "Другое",
+                    "is_own": 0,
+                    "value": 2,
+                    "percent": 10
+                },
+                {
+                    "facing": "18.0",
+                    "product_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                    "product_category_name": "Dairy",
+                    "brand_id": "cc2b6315-5356-11e7-94af-000d3a250e47",
+                    "brand_name": "Другой",
+                    "is_own": 0,
+                    "value": 18,
+                    "percent": 90
+                },
+                {
+                    "facing": "14.0",
+                    "product_category_id": "5e5236908de87-4054",
+                    "product_category_name": "GROCERY",
+                    "brand_id": "7ca67ae3-86ad-11e8-a73f-9e637f7bd86e",
+                    "brand_name": "Другой",
+                    "is_own": 0,
+                    "value": 14,
+                    "percent": 100
+                }
+            ],
+            "share_shelf_type": "facing",
+            "share_shelf_name": "Перец"
+        }
+    ],
+    "perfectstore": {
+        "tasks": [],
+        "total_visit_score": 0
+    },
+    "visit_stats": {
+        "photo": {
+            "badQuality": 0,
+            "completed": 1,
+            "created": 0,
+            "deleted": 0,
+            "goodQuality": 1,
+            "retake": 0,
+            "sent": 0,
+            "sentWithError": 0,
+            "status": "RESULT_OK",
+            "uncompressed": 1,
+            "wait": 0
+        }
+    },
+    "report": {
+        "result": {
+            "visit_id": "qq",
+            "total_photos": 1,
+            "sended_photos": 1,
+            "code": "RESULT_OK",
+            "codeInt": 1,
+            "message": "Успешно обработан"
+        },
+        "photos": {
+            "dbf0f06cc14a7b-32452ad0-PH-000001": {
+                "error": {
+                    "code": "RESULT_OK",
+                    "codeInt": 1,
+                    "message": "Успешно обработан"
+                },
+                "products": [
+                    {
+                        "product_id": "1e2d809f-6421-11e7-965b-000d3a250e47",
+                        "facing": 18,
+                        "facing_group": 18,
+                        "price": 49.9,
+                        "price_type": 1,
+                        "category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                        "name": "Другой продукт (Бутылка), Бут, .310"
+                    },
+                    {
+                        "product_id": "5e713c9b30a5c-2537",
+                        "facing": 14,
+                        "facing_group": 14,
+                        "price": 44.9,
+                        "price_type": 1,
+                        "category_id": "5e5236908de87-4054",
+                        "name": "Другой соус и кетчуп стеклянная бутылка, стеклянная бутылка, .250"
+                    },
+                    {
+                        "product_id": "C0FE276C-16D7-4E85-A6CD-5FFC0CF834B9",
+                        "facing": 2,
+                        "facing_group": 2,
+                        "price": 129,
+                        "price_type": 1,
+                        "category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                        "name": "Другое, Бут, .680"
+                    }
+                ],
+                "scene_type": "TG",
+                "scene_id": "dbf0f06cc14a7b-32452ad0-SC-000001",
+                "image_path": "/data/user/0/com.ailet.app/files/files/6/65/65e/65ed/65ed2/65ed249619bd43e56637ab994e43ebb3.jpg",
+                "image_url": "https://dairy-demo.intrtl.com/api/photo_raw/2023/04/11/dbf0f06cc14a7b-32452ad0/2023-04-11-16-53-27-7739-o.jpg"
+            }
+        },
+        "assortment_achievement": [
+            {
+                "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                "brand_name": "Activia",
+                "id": "5b8e5be624962-3311",
+                "facing_fact": 0,
+                "facing_plan": 1,
+                "facing_real": 0,
+                "price": 0,
+                "price_type": 0,
+                "name": "ACTIVIA КРАСН АПЕЛЬСИН-СЕМЕНА ЧИА, формованный стакан, .170",
+                "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+                "category_name": "Modern Dairy"
+            },
+            {
+                "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                "brand_name": "Activia",
+                "id": "5c73dc03ef183-9583",
+                "facing_fact": 0,
+                "facing_plan": 1,
+                "facing_real": 0,
+                "price": 0,
+                "price_type": 0,
+                "name": "ACTIVIA МАНГО-ПАПАЙЯ-СЕМЕНА ЧИА, формованный стакан, .170",
+                "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+                "category_name": "Modern Dairy"
+            },
+            {
+                "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                "brand_name": "Activia",
+                "id": "5c73dc0386e84-6266",
+                "facing_fact": 0,
+                "facing_plan": 1,
+                "facing_real": 0,
+                "price": 0,
+                "price_type": 0,
+                "name": "ACTIVIA ПЕРСИК-ЛИЧИ-КИНОА, формованный стакан, .150",
+                "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+                "category_name": "Modern Dairy"
+            },
+            {
+                "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                "brand_name": "Activia",
+                "id": "5cd2eaff54987-5574",
+                "facing_fact": 0,
+                "facing_plan": 1,
+                "facing_real": 0,
+                "price": 0,
+                "price_type": 0,
+                "name": "ACTIVIA ПИТ ЛАЙМ-МЯТА, ПЭТ, .290",
+                "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+                "category_name": "Modern Dairy"
+            },
+            {
+                "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                "brand_name": "Activia",
+                "id": "5c73dc023ae0c-5944",
+                "facing_fact": 0,
+                "facing_plan": 1,
+                "facing_real": 0,
+                "price": 0,
+                "price_type": 0,
+                "name": "ACTIVIA СМУССИ КЛУБ-АНАН-МАНГ-АМАР-ПАПАЙ, Стакан, .250",
+                "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+                "category_name": "Modern Dairy"
+            },
+            {
+                "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                "brand_name": "Activia",
+                "id": "5d63e7085ce79-6215",
+                "facing_fact": 0,
+                "facing_plan": 1,
+                "facing_real": 0,
+                "price": 0,
+                "price_type": 0,
+                "name": "ACTIVIA ложковый йогурт АНАН-БАН-КУРКУМ-ИМБ-СЕМ БАЗИЛ, формованный стакан, .140",
+                "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+                "category_name": "Modern Dairy"
+            },
+            {
+                "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                "brand_name": "Activia",
+                "id": "5d63e70874e4d-8946",
+                "facing_fact": 0,
+                "facing_plan": 1,
+                "facing_real": 0,
+                "price": 0,
+                "price_type": 0,
+                "name": "ACTIVIA ложковый йогурт КИВИ-ЯБЛ-ВИНОГР-МАТЧА-СЕМ ЧИА, формованный стакан, .140",
+                "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+                "category_name": "Modern Dairy"
+            },
+            {
+                "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                "brand_name": "Activia",
+                "id": "5d6654df5976d-9108",
+                "facing_fact": 0,
+                "facing_plan": 1,
+                "facing_real": 0,
+                "price": 0,
+                "price_type": 0,
+                "name": "ACTIVIA питьевой йогурт (5 вкусов), Бут, .200",
+                "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+                "category_name": "Modern Dairy"
+            },
+            {
+                "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                "brand_name": "Activia",
+                "id": "5d63e70798a36-5298",
+                "facing_fact": 0,
+                "facing_plan": 1,
+                "facing_real": 0,
+                "price": 0,
+                "price_type": 0,
+                "name": "ACTIVIA питьевой йогурт ВИШ-ЗЕЛГРЕЧ-ОВЕС-ГРАН-АС, Бут, .200",
+                "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+                "category_name": "Modern Dairy"
+            },
+            {
+                "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                "brand_name": "Activia",
+                "id": "5d63e707adb88-6851",
+                "facing_fact": 0,
+                "facing_plan": 1,
+                "facing_real": 0,
+                "price": 0,
+                "price_type": 0,
+                "name": "ACTIVIA питьевой йогурт КИВ-ОВЕС-ВИНОГР-ЧИА-МАТЧ, Бут, .200",
+                "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+                "category_name": "Modern Dairy"
+            },
+            {
+                "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                "brand_name": "Activia",
+                "id": "4084fec9-166f-4cdd-9a44-7589df4f4b4e",
+                "facing_fact": 0,
+                "facing_plan": 1,
+                "facing_real": 0,
+                "price": 0,
+                "price_type": 0,
+                "name": "Activia Пит c бананом и овсянкой, Стакан, .250",
+                "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                "category_name": "Modern Dairy"
+            },
+            {
+                "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                "brand_name": "Activia",
+                "id": "B3D1FDDB-1AE2-48EB-BFE9-6136EE88A846",
+                "facing_fact": 0,
+                "facing_plan": 1,
+                "facing_real": 0,
+                "price": 0,
+                "price_type": 0,
+                "name": "Activia Пит вишня-маракуйя, Стакан, .250",
+                "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                "category_name": "Modern Dairy"
+            },
+            {
+                "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                "brand_name": "Activia",
+                "id": "CD0B91D9-A93A-4A40-ACEB-346CE90B8A0A",
+                "facing_fact": 0,
+                "facing_plan": 1,
+                "facing_real": 0,
+                "price": 0,
+                "price_type": 0,
+                "name": "Activia Пит злаки-семена, Стакан, .250",
+                "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                "category_name": "Modern Dairy"
+            },
+            {
+                "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                "brand_name": "Activia",
+                "id": "5bd8288f4cb97-5365",
+                "facing_fact": 0,
+                "facing_plan": 1,
+                "facing_real": 0,
+                "price": 0,
+                "price_type": 0,
+                "name": "Activia Пит пчн груша-5 зл-сем льна_Q3_2019, Бут, .290",
+                "product_category_id": "5e5236ee77ac4-7319",
+                "category_name": "OTHER_H"
+            },
+            {
+                "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                "brand_name": "Activia",
+                "id": "5b55884d26a5b-6690",
+                "facing_fact": 0,
+                "facing_plan": 1,
+                "facing_real": 0,
+                "price": 0,
+                "price_type": 0,
+                "name": "Activia Пит с ананасом, Бут, .290",
+                "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                "category_name": "Modern Dairy"
+            },
+            {
+                "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                "brand_name": "Activia",
+                "id": "8d675e6a-d20c-4e26-97a8-cea85f2f12f0",
+                "facing_fact": 0,
+                "facing_plan": 1,
+                "facing_real": 0,
+                "price": 0,
+                "price_type": 0,
+                "name": "Activia Пит с ананасом, Бут, .290",
+                "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                "category_name": "Modern Dairy"
+            },
+            {
+                "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                "brand_name": "Activia",
+                "id": "482be098-b7f7-4be4-9d69-09a75a52157c",
+                "facing_fact": 0,
+                "facing_plan": 1,
+                "facing_real": 0,
+                "price": 0,
+                "price_type": 0,
+                "name": "Activia Пит с брусникой и клубникой, Стакан, .250",
+                "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                "category_name": "Modern Dairy"
+            },
+            {
+                "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                "brand_name": "Activia",
+                "id": "3E091C29-74B1-4D39-82C6-E538A0D8D785",
+                "facing_fact": 0,
+                "facing_plan": 1,
+                "facing_real": 0,
+                "price": 0,
+                "price_type": 0,
+                "name": "Activia Пит с вишней и сем. чиа, Бут, .290",
+                "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                "category_name": "Modern Dairy"
+            },
+            {
+                "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                "brand_name": "Activia",
+                "id": "141e9f56-d7ed-4137-9c68-fbe61dfb0e36",
+                "facing_fact": 0,
+                "facing_plan": 1,
+                "facing_real": 0,
+                "price": 0,
+                "price_type": 0,
+                "name": "Activia Пит с дыней и земляникой, Бут, .290",
+                "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                "category_name": "Modern Dairy"
+            },
+            {
+                "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                "brand_name": "Activia",
+                "id": "5b558847ce3a4-1502",
+                "facing_fact": 0,
+                "facing_plan": 1,
+                "facing_real": 0,
+                "price": 0,
+                "price_type": 0,
+                "name": "Activia Пит с клубникой и земляникой, Бут, .290",
+                "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                "category_name": "Modern Dairy"
+            },
+            {
+                "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                "brand_name": "Activia",
+                "id": "5b55884e307a2-2808",
+                "facing_fact": 0,
+                "facing_plan": 1,
+                "facing_real": 0,
+                "price": 0,
+                "price_type": 0,
+                "name": "Activia Пит с манго, ПЭТ, .290",
+                "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                "category_name": "Modern Dairy"
+            },
+            {
+                "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                "brand_name": "Activia",
+                "id": "5b55884d0702e-5890",
+                "facing_fact": 0,
+                "facing_plan": 1,
+                "facing_real": 0,
+                "price": 0,
+                "price_type": 0,
+                "name": "Activia Пит с черносливом, Бут, .290",
+                "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                "category_name": "Modern Dairy"
+            },
+            {
+                "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                "brand_name": "Activia",
+                "id": "5b55884d5bd3c-8791",
+                "facing_fact": 0,
+                "facing_plan": 1,
+                "facing_real": 0,
+                "price": 0,
+                "price_type": 0,
+                "name": "Activia Пит с яблоком и злаками, Бут, .290",
+                "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                "category_name": "Modern Dairy"
+            },
+            {
+                "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                "brand_name": "Activia",
+                "id": "30d1b85a-6702-4f75-829d-cd11e1ef61bd",
+                "facing_fact": 0,
+                "facing_plan": 1,
+                "facing_real": 0,
+                "price": 0,
+                "price_type": 0,
+                "name": "Activia Пит с яблоком и злаками, Бут, .290",
+                "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                "category_name": "Modern Dairy"
+            },
+            {
+                "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                "brand_name": "Activia",
+                "id": "5b55884d836ec-1243",
+                "facing_fact": 0,
+                "facing_plan": 1,
+                "facing_real": 0,
+                "price": 0,
+                "price_type": 0,
+                "name": "Activia Пит со злаками, Бут, .290",
+                "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                "category_name": "Modern Dairy"
+            },
+            {
+                "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                "brand_name": "Activia",
+                "id": "5a09e45d-a2b2-4c97-853f-d34036ba5715",
+                "facing_fact": 0,
+                "facing_plan": 1,
+                "facing_real": 0,
+                "price": 0,
+                "price_type": 0,
+                "name": "Activia Пит, Стакан, .250",
+                "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                "category_name": "Modern Dairy"
+            },
+            {
+                "brand_id": "a45f430d-9e3b-11e7-a5c2-000d3a250e47",
+                "brand_name": "Другое",
+                "id": "C0FE276C-16D7-4E85-A6CD-5FFC0CF834B9",
+                "facing_fact": 2,
+                "facing_plan": 0,
+                "facing_real": 2,
+                "price": 129,
+                "price_type": 1,
+                "name": "Другое, Бут, .680",
+                "product_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                "category_name": "Dairy"
+            },
+            {
+                "brand_id": "cc2b6315-5356-11e7-94af-000d3a250e47",
+                "brand_name": "Другой",
+                "id": "1e2d809f-6421-11e7-965b-000d3a250e47",
+                "facing_fact": 18,
+                "facing_plan": 0,
+                "facing_real": 18,
+                "price": 49.9,
+                "price_type": 1,
+                "name": "Другой продукт (Бутылка), Бут, .310",
+                "product_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                "category_name": "Dairy"
+            },
+            {
+                "brand_id": "7ca67ae3-86ad-11e8-a73f-9e637f7bd86e",
+                "brand_name": "Другой",
+                "id": "5e713c9b30a5c-2537",
+                "facing_fact": 14,
+                "facing_plan": 0,
+                "facing_real": 14,
+                "price": 44.9,
+                "price_type": 1,
+                "name": "Другой соус и кетчуп стеклянная бутылка, стеклянная бутылка, .250",
+                "product_category_id": "5e5236908de87-4054",
+                "category_name": "GROCERY"
+            }
+        ],
+        "assortment_achievement_by_metrics": [
+            {
+                "products": [
+                    {
+                        "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                        "brand_name": "Activia",
+                        "id": "5b8e5be624962-3311",
+                        "facing_fact": 0,
+                        "facing_plan": 1,
+                        "facing_real": 0,
+                        "price": 0,
+                        "price_type": 0,
+                        "name": "ACTIVIA КРАСН АПЕЛЬСИН-СЕМЕНА ЧИА, формованный стакан, .170",
+                        "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+                        "category_name": "Modern Dairy"
+                    },
+                    {
+                        "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                        "brand_name": "Activia",
+                        "id": "5c73dc03ef183-9583",
+                        "facing_fact": 0,
+                        "facing_plan": 1,
+                        "facing_real": 0,
+                        "price": 0,
+                        "price_type": 0,
+                        "name": "ACTIVIA МАНГО-ПАПАЙЯ-СЕМЕНА ЧИА, формованный стакан, .170",
+                        "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+                        "category_name": "Modern Dairy"
+                    },
+                    {
+                        "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                        "brand_name": "Activia",
+                        "id": "5c73dc0386e84-6266",
+                        "facing_fact": 0,
+                        "facing_plan": 1,
+                        "facing_real": 0,
+                        "price": 0,
+                        "price_type": 0,
+                        "name": "ACTIVIA ПЕРСИК-ЛИЧИ-КИНОА, формованный стакан, .150",
+                        "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+                        "category_name": "Modern Dairy"
+                    },
+                    {
+                        "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                        "brand_name": "Activia",
+                        "id": "5cd2eaff54987-5574",
+                        "facing_fact": 0,
+                        "facing_plan": 1,
+                        "facing_real": 0,
+                        "price": 0,
+                        "price_type": 0,
+                        "name": "ACTIVIA ПИТ ЛАЙМ-МЯТА, ПЭТ, .290",
+                        "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+                        "category_name": "Modern Dairy"
+                    },
+                    {
+                        "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                        "brand_name": "Activia",
+                        "id": "5c73dc023ae0c-5944",
+                        "facing_fact": 0,
+                        "facing_plan": 1,
+                        "facing_real": 0,
+                        "price": 0,
+                        "price_type": 0,
+                        "name": "ACTIVIA СМУССИ КЛУБ-АНАН-МАНГ-АМАР-ПАПАЙ, Стакан, .250",
+                        "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+                        "category_name": "Modern Dairy"
+                    },
+                    {
+                        "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                        "brand_name": "Activia",
+                        "id": "5d63e7085ce79-6215",
+                        "facing_fact": 0,
+                        "facing_plan": 1,
+                        "facing_real": 0,
+                        "price": 0,
+                        "price_type": 0,
+                        "name": "ACTIVIA ложковый йогурт АНАН-БАН-КУРКУМ-ИМБ-СЕМ БАЗИЛ, формованный стакан, .140",
+                        "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+                        "category_name": "Modern Dairy"
+                    },
+                    {
+                        "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                        "brand_name": "Activia",
+                        "id": "5d63e70874e4d-8946",
+                        "facing_fact": 0,
+                        "facing_plan": 1,
+                        "facing_real": 0,
+                        "price": 0,
+                        "price_type": 0,
+                        "name": "ACTIVIA ложковый йогурт КИВИ-ЯБЛ-ВИНОГР-МАТЧА-СЕМ ЧИА, формованный стакан, .140",
+                        "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+                        "category_name": "Modern Dairy"
+                    },
+                    {
+                        "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                        "brand_name": "Activia",
+                        "id": "5d6654df5976d-9108",
+                        "facing_fact": 0,
+                        "facing_plan": 1,
+                        "facing_real": 0,
+                        "price": 0,
+                        "price_type": 0,
+                        "name": "ACTIVIA питьевой йогурт (5 вкусов), Бут, .200",
+                        "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+                        "category_name": "Modern Dairy"
+                    },
+                    {
+                        "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                        "brand_name": "Activia",
+                        "id": "5d63e70798a36-5298",
+                        "facing_fact": 0,
+                        "facing_plan": 1,
+                        "facing_real": 0,
+                        "price": 0,
+                        "price_type": 0,
+                        "name": "ACTIVIA питьевой йогурт ВИШ-ЗЕЛГРЕЧ-ОВЕС-ГРАН-АС, Бут, .200",
+                        "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+                        "category_name": "Modern Dairy"
+                    },
+                    {
+                        "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                        "brand_name": "Activia",
+                        "id": "5d63e707adb88-6851",
+                        "facing_fact": 0,
+                        "facing_plan": 1,
+                        "facing_real": 0,
+                        "price": 0,
+                        "price_type": 0,
+                        "name": "ACTIVIA питьевой йогурт КИВ-ОВЕС-ВИНОГР-ЧИА-МАТЧ, Бут, .200",
+                        "product_category_id": "df9e03dd-e7a2-45d6-8e4d-fa80a03ecc5e",
+                        "category_name": "Modern Dairy"
+                    },
+                    {
+                        "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                        "brand_name": "Activia",
+                        "id": "4084fec9-166f-4cdd-9a44-7589df4f4b4e",
+                        "facing_fact": 0,
+                        "facing_plan": 1,
+                        "facing_real": 0,
+                        "price": 0,
+                        "price_type": 0,
+                        "name": "Activia Пит c бананом и овсянкой, Стакан, .250",
+                        "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                        "category_name": "Modern Dairy"
+                    },
+                    {
+                        "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                        "brand_name": "Activia",
+                        "id": "B3D1FDDB-1AE2-48EB-BFE9-6136EE88A846",
+                        "facing_fact": 0,
+                        "facing_plan": 1,
+                        "facing_real": 0,
+                        "price": 0,
+                        "price_type": 0,
+                        "name": "Activia Пит вишня-маракуйя, Стакан, .250",
+                        "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                        "category_name": "Modern Dairy"
+                    },
+                    {
+                        "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                        "brand_name": "Activia",
+                        "id": "CD0B91D9-A93A-4A40-ACEB-346CE90B8A0A",
+                        "facing_fact": 0,
+                        "facing_plan": 1,
+                        "facing_real": 0,
+                        "price": 0,
+                        "price_type": 0,
+                        "name": "Activia Пит злаки-семена, Стакан, .250",
+                        "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                        "category_name": "Modern Dairy"
+                    },
+                    {
+                        "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                        "brand_name": "Activia",
+                        "id": "5bd8288f4cb97-5365",
+                        "facing_fact": 0,
+                        "facing_plan": 1,
+                        "facing_real": 0,
+                        "price": 0,
+                        "price_type": 0,
+                        "name": "Activia Пит пчн груша-5 зл-сем льна_Q3_2019, Бут, .290",
+                        "product_category_id": "5e5236ee77ac4-7319",
+                        "category_name": "OTHER_H"
+                    },
+                    {
+                        "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                        "brand_name": "Activia",
+                        "id": "5b55884d26a5b-6690",
+                        "facing_fact": 0,
+                        "facing_plan": 1,
+                        "facing_real": 0,
+                        "price": 0,
+                        "price_type": 0,
+                        "name": "Activia Пит с ананасом, Бут, .290",
+                        "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                        "category_name": "Modern Dairy"
+                    },
+                    {
+                        "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                        "brand_name": "Activia",
+                        "id": "8d675e6a-d20c-4e26-97a8-cea85f2f12f0",
+                        "facing_fact": 0,
+                        "facing_plan": 1,
+                        "facing_real": 0,
+                        "price": 0,
+                        "price_type": 0,
+                        "name": "Activia Пит с ананасом, Бут, .290",
+                        "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                        "category_name": "Modern Dairy"
+                    },
+                    {
+                        "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                        "brand_name": "Activia",
+                        "id": "482be098-b7f7-4be4-9d69-09a75a52157c",
+                        "facing_fact": 0,
+                        "facing_plan": 1,
+                        "facing_real": 0,
+                        "price": 0,
+                        "price_type": 0,
+                        "name": "Activia Пит с брусникой и клубникой, Стакан, .250",
+                        "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                        "category_name": "Modern Dairy"
+                    },
+                    {
+                        "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                        "brand_name": "Activia",
+                        "id": "3E091C29-74B1-4D39-82C6-E538A0D8D785",
+                        "facing_fact": 0,
+                        "facing_plan": 1,
+                        "facing_real": 0,
+                        "price": 0,
+                        "price_type": 0,
+                        "name": "Activia Пит с вишней и сем. чиа, Бут, .290",
+                        "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                        "category_name": "Modern Dairy"
+                    },
+                    {
+                        "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                        "brand_name": "Activia",
+                        "id": "141e9f56-d7ed-4137-9c68-fbe61dfb0e36",
+                        "facing_fact": 0,
+                        "facing_plan": 1,
+                        "facing_real": 0,
+                        "price": 0,
+                        "price_type": 0,
+                        "name": "Activia Пит с дыней и земляникой, Бут, .290",
+                        "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                        "category_name": "Modern Dairy"
+                    },
+                    {
+                        "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                        "brand_name": "Activia",
+                        "id": "5b558847ce3a4-1502",
+                        "facing_fact": 0,
+                        "facing_plan": 1,
+                        "facing_real": 0,
+                        "price": 0,
+                        "price_type": 0,
+                        "name": "Activia Пит с клубникой и земляникой, Бут, .290",
+                        "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                        "category_name": "Modern Dairy"
+                    },
+                    {
+                        "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                        "brand_name": "Activia",
+                        "id": "5b55884e307a2-2808",
+                        "facing_fact": 0,
+                        "facing_plan": 1,
+                        "facing_real": 0,
+                        "price": 0,
+                        "price_type": 0,
+                        "name": "Activia Пит с манго, ПЭТ, .290",
+                        "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                        "category_name": "Modern Dairy"
+                    },
+                    {
+                        "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                        "brand_name": "Activia",
+                        "id": "5b55884d0702e-5890",
+                        "facing_fact": 0,
+                        "facing_plan": 1,
+                        "facing_real": 0,
+                        "price": 0,
+                        "price_type": 0,
+                        "name": "Activia Пит с черносливом, Бут, .290",
+                        "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                        "category_name": "Modern Dairy"
+                    },
+                    {
+                        "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                        "brand_name": "Activia",
+                        "id": "5b55884d5bd3c-8791",
+                        "facing_fact": 0,
+                        "facing_plan": 1,
+                        "facing_real": 0,
+                        "price": 0,
+                        "price_type": 0,
+                        "name": "Activia Пит с яблоком и злаками, Бут, .290",
+                        "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                        "category_name": "Modern Dairy"
+                    },
+                    {
+                        "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                        "brand_name": "Activia",
+                        "id": "30d1b85a-6702-4f75-829d-cd11e1ef61bd",
+                        "facing_fact": 0,
+                        "facing_plan": 1,
+                        "facing_real": 0,
+                        "price": 0,
+                        "price_type": 0,
+                        "name": "Activia Пит с яблоком и злаками, Бут, .290",
+                        "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                        "category_name": "Modern Dairy"
+                    },
+                    {
+                        "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                        "brand_name": "Activia",
+                        "id": "5b55884d836ec-1243",
+                        "facing_fact": 0,
+                        "facing_plan": 1,
+                        "facing_real": 0,
+                        "price": 0,
+                        "price_type": 0,
+                        "name": "Activia Пит со злаками, Бут, .290",
+                        "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                        "category_name": "Modern Dairy"
+                    },
+                    {
+                        "brand_id": "7591ae4b-84bc-4061-a518-6ae939a4ed6b",
+                        "brand_name": "Activia",
+                        "id": "5a09e45d-a2b2-4c97-853f-d34036ba5715",
+                        "facing_fact": 0,
+                        "facing_plan": 1,
+                        "facing_real": 0,
+                        "price": 0,
+                        "price_type": 0,
+                        "name": "Activia Пит, Стакан, .250",
+                        "product_category_id": "6cecc761-af18-11e7-a5c2-000d3a250e47",
+                        "category_name": "Modern Dairy"
+                    },
+                    {
+                        "brand_id": "a45f430d-9e3b-11e7-a5c2-000d3a250e47",
+                        "brand_name": "Другое",
+                        "id": "C0FE276C-16D7-4E85-A6CD-5FFC0CF834B9",
+                        "facing_fact": 2,
+                        "facing_plan": 0,
+                        "facing_real": 2,
+                        "price": 129,
+                        "price_type": 1,
+                        "name": "Другое, Бут, .680",
+                        "product_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                        "category_name": "Dairy"
+                    },
+                    {
+                        "brand_id": "cc2b6315-5356-11e7-94af-000d3a250e47",
+                        "brand_name": "Другой",
+                        "id": "1e2d809f-6421-11e7-965b-000d3a250e47",
+                        "facing_fact": 18,
+                        "facing_plan": 0,
+                        "facing_real": 18,
+                        "price": 49.9,
+                        "price_type": 1,
+                        "name": "Другой продукт (Бутылка), Бут, .310",
+                        "product_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                        "category_name": "Dairy"
+                    },
+                    {
+                        "brand_id": "7ca67ae3-86ad-11e8-a73f-9e637f7bd86e",
+                        "brand_name": "Другой",
+                        "id": "5e713c9b30a5c-2537",
+                        "facing_fact": 14,
+                        "facing_plan": 0,
+                        "facing_real": 14,
+                        "price": 44.9,
+                        "price_type": 1,
+                        "name": "Другой соус и кетчуп стеклянная бутылка, стеклянная бутылка, .250",
+                        "product_category_id": "5e5236908de87-4054",
+                        "category_name": "GROCERY"
+                    }
+                ],
+                "assortment_achievement_name": "General"
+            }
+        ],
+        "share_shelf": {
+            "share_shelf_by_visit": [
+                {
+                    "plan": 0,
+                    "percent": 0,
+                    "value": 0,
+                    "value_previous": 0,
+                    "numerator": 0,
+                    "denominator": 0
+                }
+            ],
+            "share_shelf_by_macrocategories": [],
+            "share_shelf_by_categories": [],
+            "share_shelf_by_brands": [],
+            "share_shelf_type": "facing_cm",
+            "share_shelf_name": "sos_2"
+        },
+        "share_shelf_by_metrics": [
+            {
+                "share_shelf_by_visit": [
+                    {
+                        "plan": 0,
+                        "percent": 0,
+                        "value": 0,
+                        "value_previous": 0,
+                        "numerator": 0,
+                        "denominator": 0
+                    }
+                ],
+                "share_shelf_by_macrocategories": [],
+                "share_shelf_by_categories": [],
+                "share_shelf_by_brands": [],
+                "share_shelf_type": "facing_cm",
+                "share_shelf_name": "sos_2"
+            },
+            {
+                "share_shelf_by_visit": [
+                    {
+                        "plan": 0,
+                        "percent": 0,
+                        "value": 100,
+                        "value_previous": 100,
+                        "numerator": 34,
+                        "denominator": 34
+                    }
+                ],
+                "share_shelf_by_macrocategories": [
+                    {
+                        "facing": "20.0",
+                        "product_macro_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                        "product_macro_category_name": "Dairy",
+                        "value": 20,
+                        "percent": 100,
+                        "matched": 20
+                    },
+                    {
+                        "facing": "14.0",
+                        "product_macro_category_id": "5e5236908de87-4054",
+                        "product_macro_category_name": "GROCERY",
+                        "value": 14,
+                        "percent": 100,
+                        "matched": 14
+                    }
+                ],
+                "share_shelf_by_categories": [
+                    {
+                        "facing": "20.0",
+                        "macro_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                        "product_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                        "product_category_name": "Dairy",
+                        "value": 20,
+                        "percent": 100,
+                        "matched": 20
+                    },
+                    {
+                        "facing": "14.0",
+                        "macro_category_id": "5e5236908de87-4054",
+                        "product_category_id": "5e5236908de87-4054",
+                        "product_category_name": "GROCERY",
+                        "value": 14,
+                        "percent": 100,
+                        "matched": 14
+                    }
+                ],
+                "share_shelf_by_brands": [
+                    {
+                        "facing": "2.0",
+                        "product_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                        "product_category_name": "Dairy",
+                        "brand_id": "a45f430d-9e3b-11e7-a5c2-000d3a250e47",
+                        "brand_name": "Другое",
+                        "is_own": 0,
+                        "value": 2,
+                        "percent": 10
+                    },
+                    {
+                        "facing": "18.0",
+                        "product_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                        "product_category_name": "Dairy",
+                        "brand_id": "cc2b6315-5356-11e7-94af-000d3a250e47",
+                        "brand_name": "Другой",
+                        "is_own": 0,
+                        "value": 18,
+                        "percent": 90
+                    },
+                    {
+                        "facing": "14.0",
+                        "product_category_id": "5e5236908de87-4054",
+                        "product_category_name": "GROCERY",
+                        "brand_id": "7ca67ae3-86ad-11e8-a73f-9e637f7bd86e",
+                        "brand_name": "Другой",
+                        "is_own": 0,
+                        "value": 14,
+                        "percent": 100
+                    }
+                ],
+                "share_shelf_type": "facing",
+                "share_shelf_name": "SOS"
+            },
+            {
+                "share_shelf_by_visit": [
+                    {
+                        "plan": 0,
+                        "percent": 0,
+                        "value": 0,
+                        "value_previous": 0,
+                        "numerator": 0,
+                        "denominator": 0
+                    }
+                ],
+                "share_shelf_by_macrocategories": [],
+                "share_shelf_by_categories": [],
+                "share_shelf_by_brands": [],
+                "share_shelf_type": "facing",
+                "share_shelf_name": "sos_11"
+            },
+            {
+                "share_shelf_by_visit": [
+                    {
+                        "plan": 0,
+                        "percent": 0,
+                        "value": 0,
+                        "value_previous": 0,
+                        "numerator": 0,
+                        "denominator": 0
+                    }
+                ],
+                "share_shelf_by_macrocategories": [],
+                "share_shelf_by_categories": [],
+                "share_shelf_by_brands": [],
+                "share_shelf_type": "facing_cm",
+                "share_shelf_name": "sos_3_empty"
+            },
+            {
+                "share_shelf_by_visit": [
+                    {
+                        "plan": 0,
+                        "percent": 0,
+                        "value": 0,
+                        "value_previous": 0,
+                        "numerator": 0,
+                        "denominator": 0
+                    }
+                ],
+                "share_shelf_by_macrocategories": [],
+                "share_shelf_by_categories": [],
+                "share_shelf_by_brands": [],
+                "share_shelf_type": "facing",
+                "share_shelf_name": "12_1_demo"
+            },
+            {
+                "share_shelf_by_visit": [
+                    {
+                        "plan": 0,
+                        "percent": 0,
+                        "value": 0,
+                        "value_previous": 0,
+                        "numerator": 0,
+                        "denominator": 0
+                    }
+                ],
+                "share_shelf_by_macrocategories": [],
+                "share_shelf_by_categories": [],
+                "share_shelf_by_brands": [],
+                "share_shelf_type": "column_cm",
+                "share_shelf_name": "1703_test_column_cm"
+            },
+            {
+                "share_shelf_by_visit": [
+                    {
+                        "plan": 0,
+                        "percent": 0,
+                        "value": 0,
+                        "value_previous": 0,
+                        "numerator": 0,
+                        "denominator": 0
+                    }
+                ],
+                "share_shelf_by_macrocategories": [],
+                "share_shelf_by_categories": [],
+                "share_shelf_by_brands": [],
+                "share_shelf_type": "facing",
+                "share_shelf_name": "test_1703_fasing"
+            },
+            {
+                "share_shelf_by_visit": [
+                    {
+                        "plan": 0,
+                        "percent": 0,
+                        "value": 0,
+                        "value_previous": 0,
+                        "numerator": 0,
+                        "denominator": 0
+                    }
+                ],
+                "share_shelf_by_macrocategories": [],
+                "share_shelf_by_categories": [],
+                "share_shelf_by_brands": [],
+                "share_shelf_type": "facing",
+                "share_shelf_name": "Длинное наименование метрики для проверки отображения"
+            },
+            {
+                "share_shelf_by_visit": [
+                    {
+                        "plan": 0,
+                        "percent": 0,
+                        "value": 100,
+                        "value_previous": 100,
+                        "numerator": 34,
+                        "denominator": 34
+                    }
+                ],
+                "share_shelf_by_macrocategories": [
+                    {
+                        "facing": "20.0",
+                        "product_macro_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                        "product_macro_category_name": "Dairy",
+                        "value": 20,
+                        "percent": 100,
+                        "matched": 20
+                    },
+                    {
+                        "facing": "14.0",
+                        "product_macro_category_id": "5e5236908de87-4054",
+                        "product_macro_category_name": "GROCERY",
+                        "value": 14,
+                        "percent": 100,
+                        "matched": 14
+                    }
+                ],
+                "share_shelf_by_categories": [
+                    {
+                        "facing": "20.0",
+                        "macro_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                        "product_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                        "product_category_name": "Dairy",
+                        "value": 20,
+                        "percent": 100,
+                        "matched": 20
+                    },
+                    {
+                        "facing": "14.0",
+                        "macro_category_id": "5e5236908de87-4054",
+                        "product_category_id": "5e5236908de87-4054",
+                        "product_category_name": "GROCERY",
+                        "value": 14,
+                        "percent": 100,
+                        "matched": 14
+                    }
+                ],
+                "share_shelf_by_brands": [
+                    {
+                        "facing": "2.0",
+                        "product_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                        "product_category_name": "Dairy",
+                        "brand_id": "a45f430d-9e3b-11e7-a5c2-000d3a250e47",
+                        "brand_name": "Другое",
+                        "is_own": 0,
+                        "value": 2,
+                        "percent": 10
+                    },
+                    {
+                        "facing": "18.0",
+                        "product_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                        "product_category_name": "Dairy",
+                        "brand_id": "cc2b6315-5356-11e7-94af-000d3a250e47",
+                        "brand_name": "Другой",
+                        "is_own": 0,
+                        "value": 18,
+                        "percent": 90
+                    },
+                    {
+                        "facing": "14.0",
+                        "product_category_id": "5e5236908de87-4054",
+                        "product_category_name": "GROCERY",
+                        "brand_id": "7ca67ae3-86ad-11e8-a73f-9e637f7bd86e",
+                        "brand_name": "Другой",
+                        "is_own": 0,
+                        "value": 14,
+                        "percent": 100
+                    }
+                ],
+                "share_shelf_type": "facing",
+                "share_shelf_name": "Какао"
+            },
+            {
+                "share_shelf_by_visit": [
+                    {
+                        "plan": 0,
+                        "percent": 0,
+                        "value": 100,
+                        "value_previous": 100,
+                        "numerator": 34,
+                        "denominator": 34
+                    }
+                ],
+                "share_shelf_by_macrocategories": [
+                    {
+                        "facing": "20.0",
+                        "product_macro_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                        "product_macro_category_name": "Dairy",
+                        "value": 20,
+                        "percent": 100,
+                        "matched": 20
+                    },
+                    {
+                        "facing": "14.0",
+                        "product_macro_category_id": "5e5236908de87-4054",
+                        "product_macro_category_name": "GROCERY",
+                        "value": 14,
+                        "percent": 100,
+                        "matched": 14
+                    }
+                ],
+                "share_shelf_by_categories": [
+                    {
+                        "facing": "20.0",
+                        "macro_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                        "product_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                        "product_category_name": "Dairy",
+                        "value": 20,
+                        "percent": 100,
+                        "matched": 20
+                    },
+                    {
+                        "facing": "14.0",
+                        "macro_category_id": "5e5236908de87-4054",
+                        "product_category_id": "5e5236908de87-4054",
+                        "product_category_name": "GROCERY",
+                        "value": 14,
+                        "percent": 100,
+                        "matched": 14
+                    }
+                ],
+                "share_shelf_by_brands": [
+                    {
+                        "facing": "2.0",
+                        "product_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                        "product_category_name": "Dairy",
+                        "brand_id": "a45f430d-9e3b-11e7-a5c2-000d3a250e47",
+                        "brand_name": "Другое",
+                        "is_own": 0,
+                        "value": 2,
+                        "percent": 10
+                    },
+                    {
+                        "facing": "18.0",
+                        "product_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                        "product_category_name": "Dairy",
+                        "brand_id": "cc2b6315-5356-11e7-94af-000d3a250e47",
+                        "brand_name": "Другой",
+                        "is_own": 0,
+                        "value": 18,
+                        "percent": 90
+                    },
+                    {
+                        "facing": "14.0",
+                        "product_category_id": "5e5236908de87-4054",
+                        "product_category_name": "GROCERY",
+                        "brand_id": "7ca67ae3-86ad-11e8-a73f-9e637f7bd86e",
+                        "brand_name": "Другой",
+                        "is_own": 0,
+                        "value": 14,
+                        "percent": 100
+                    }
+                ],
+                "share_shelf_type": "facing",
+                "share_shelf_name": "Соль"
+            },
+            {
+                "share_shelf_by_visit": [
+                    {
+                        "plan": 0,
+                        "percent": 0,
+                        "value": 100,
+                        "value_previous": 100,
+                        "numerator": 34,
+                        "denominator": 34
+                    }
+                ],
+                "share_shelf_by_macrocategories": [
+                    {
+                        "facing": "20.0",
+                        "product_macro_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                        "product_macro_category_name": "Dairy",
+                        "value": 20,
+                        "percent": 100,
+                        "matched": 20
+                    },
+                    {
+                        "facing": "14.0",
+                        "product_macro_category_id": "5e5236908de87-4054",
+                        "product_macro_category_name": "GROCERY",
+                        "value": 14,
+                        "percent": 100,
+                        "matched": 14
+                    }
+                ],
+                "share_shelf_by_categories": [
+                    {
+                        "facing": "20.0",
+                        "macro_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                        "product_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                        "product_category_name": "Dairy",
+                        "value": 20,
+                        "percent": 100,
+                        "matched": 20
+                    },
+                    {
+                        "facing": "14.0",
+                        "macro_category_id": "5e5236908de87-4054",
+                        "product_category_id": "5e5236908de87-4054",
+                        "product_category_name": "GROCERY",
+                        "value": 14,
+                        "percent": 100,
+                        "matched": 14
+                    }
+                ],
+                "share_shelf_by_brands": [
+                    {
+                        "facing": "2.0",
+                        "product_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                        "product_category_name": "Dairy",
+                        "brand_id": "a45f430d-9e3b-11e7-a5c2-000d3a250e47",
+                        "brand_name": "Другое",
+                        "is_own": 0,
+                        "value": 2,
+                        "percent": 10
+                    },
+                    {
+                        "facing": "18.0",
+                        "product_category_id": "8f0f1b83-8368-40f2-a908-1adeddc7923d",
+                        "product_category_name": "Dairy",
+                        "brand_id": "cc2b6315-5356-11e7-94af-000d3a250e47",
+                        "brand_name": "Другой",
+                        "is_own": 0,
+                        "value": 18,
+                        "percent": 90
+                    },
+                    {
+                        "facing": "14.0",
+                        "product_category_id": "5e5236908de87-4054",
+                        "product_category_name": "GROCERY",
+                        "brand_id": "7ca67ae3-86ad-11e8-a73f-9e637f7bd86e",
+                        "brand_name": "Другой",
+                        "is_own": 0,
+                        "value": 14,
+                        "percent": 100
+                    }
+                ],
+                "share_shelf_type": "facing",
+                "share_shelf_name": "Перец"
+            }
+        ],
+        "perfectstore": {
+            "tasks": [],
+            "total_visit_score": 0
+        },
+        "visit_stats": {
+            "photo": {
+                "badQuality": 0,
+                "completed": 1,
+                "created": 0,
+                "deleted": 0,
+                "goodQuality": 1,
+                "retake": 0,
+                "sent": 0,
+                "sentWithError": 0,
+                "status": "RESULT_OK",
+                "uncompressed": 1,
+                "wait": 0
+            }
+        }
+    }
+}
