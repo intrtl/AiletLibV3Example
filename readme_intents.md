@@ -55,7 +55,7 @@ action | String | Метод
 error | String | Тип ошибки (если была ошибка)
 message | String | Тест ошибки (если была ошибка)
 
-```Intent.data``` содержит ```uri``` файла отчета ([пример отчета](method_result.json))
+```Intent.data``` содержит ```uri``` файла отчета ([пример отчета](method_result.json)) для методов ```visit, report, summaryReport```.
 
 
 **Типы ошибок**
