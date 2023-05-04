@@ -108,6 +108,14 @@ class App : Application() {
 }
 ```
 
+Если в приложении пользователем дано разрешение на использование камеры и при вызове экрана камеры Ailet он сразу же закрывается без ошибок (exceptions), то добавьте в поле ``features`` дополнительный модуль
+
+```kotlin
+DefaultAiletPermissionsFeature(
+    excludedPermissions = setOf(AiletPermissionsFeature.Exclude.CAMERA)
+)
+```
+
 ### 1.2.2. Использование
 После инициализации вам становится доступен единый клиент библиотеки ``AiletClient``, который вы можете использовать для вызова ее методов:
 ```kotlin
