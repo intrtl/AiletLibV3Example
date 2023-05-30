@@ -128,7 +128,7 @@ id  |String      | Идентификатор пользователя
 
 ## 1.3 Широковещательное (broadcast) сообщение 
 
-При получении всех данных по визту приложение Ailet генерирует широковещательное сообщение с ```intent.action = com.ailet.app.BROADCAST_WIDGETS_RECEIVED```.
+При получении всех данных по визту приложение Ailet генерирует широковещательное сообщение с ```intent.action = com.ailet.app.BROADCAST_WIDGETS_RECEIVED``` (либо ```com.ailet.russia.BROADCAST_WIDGETS_RECEIVED```).
 
 **Пример обработки сообщения**
 
