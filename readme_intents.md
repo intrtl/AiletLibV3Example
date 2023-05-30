@@ -12,12 +12,12 @@
 
 ## 1.1. Вызов метода (на примере метода visit)
 
-Action задается в формате ```com.ailet.app.[метод]```
+Action задается в формате ```com.ailet.[метод]```
 
 ```kotlin
 private fun visit() {
     Intent().apply {
-        action = "com.ailet.app.ACTION_VISIT"
+        action = "com.ailet.ACTION_VISIT"
         flags = 0
         putExtra("login", "логин")
         putExtra("password", "пароль")
