@@ -1,4 +1,4 @@
-![Latest Release](https://img.shields.io/badge/latest%20release-4.0.1-brightgreen)
+![Latest Release](https://img.shields.io/badge/latest%20release-4.0.2-brightgreen)
 
 # 1. Integrate Ailet library into project
 
@@ -70,7 +70,7 @@ dependencyResolutionManagement {
 ### 1.1.3. Добавьте в build.gradle модуля две зависимости:
 
 ```groovy
-def ailetLibVersion = '4.0.1'
+def ailetLibVersion = '4.0.2'
 // библиотека Ailet
 implementation "com.ailet.android:lib:$ailetLibVersion"
 // необязательно: модуль техподдержки

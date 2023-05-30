@@ -1,4 +1,4 @@
-![Latest Release](https://img.shields.io/badge/latest%20release-4.0.1-brightgreen)
+![Latest Release](https://img.shields.io/badge/latest%20release-4.0.2-brightgreen)
 
 # Integrating the Ailet Library v.3 for Android into your project
 
@@ -71,7 +71,7 @@ dependencyResolutionManagement {
 ### 1.3. Add the following two dependencies to ``build.gradle`` file of the module
 
 ```groovy
-def ailetLibVersion = '4.0.1'
+def ailetLibVersion = '4.0.2'
 // the Ailet Lib module
 implementation "com.ailet.android:lib:$ailetLibVersion"
 // optional: the technical support module
