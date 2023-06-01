@@ -172,6 +172,31 @@ Ailet.getClient()
             .executeBlocking()
     ```
 
+3. Пример вызова на Java
+   
+   ```java
+    Ailet.getClient().init(
+        "login",
+        "password",
+        null,
+        false,
+        null,
+        false
+    ).execute(
+        result -> {
+            return null;
+        },
+        throwable -> {
+            return null;
+        },
+        () -> {
+            return null;
+        }
+    );
+   ```
+
+**ВНИМАНИЕ!** В Java для методов не применяются значения по умолчанию, по этому необходимо заполнять все поля.
+
 ### 1.4.1 Список доступных серверов. Метод getServers()
 
 Метод отдаем список серверов (AiletServer), которые можно использовать в методы init. Метод необзательный и необходим только для мультипортального режима.
@@ -201,12 +226,19 @@ isNeedSyncCatalogs|Boolean | Необходимость синхронизаци
 Метод запускает съемку в рамках визита.
 
 Параметр | Тип | Описание | Обязательный | По умолчанию
----------|-----|----------|:-:|:-:
+---------|-----|----------|:-:|---
 storeId         |AiletMethodStart.StoreId      | Внешний идентификатор торговой точки.        | + | 
 externalVisitId |String      | Внешний идентификатор визита.     |  | null
 sceneGroupId    |Int         | Идентификатор группы сцен.            | | null 
 taskId       |String      | Внешний идентификатор задачи.         | | null 
 visitType       |String      | Тип визита (before, after).         | | null 
+visitUuid       |String      | Внутренний ИД визита.         | | null 
+retailTaskIterationUuid       |String      | ИД итерации (ритейл).         | | null 
+retailTaskId       |String      | ИД задачи (ритейл).         | | null 
+retailTaskActionId       |String      | ИД экшена (ритейл).         | | null 
+retailTaskActionId       |String      | ИД экшена (ритейл).         | | null 
+sceneTypes | List | Список типов сцен | | listOf()
+launchConfig | LaunchConfig | Конфигурация запуска | | AiletMethodStart.LaunchConfig()
 
 ### 1.4.4 Получение отчета по визиту. Метод getReports()
 
@@ -235,7 +267,6 @@ visitType       |String      | Тип визита (before, after).         | | 
 Параметр | Тип | Описание | Обязательный 
 ---------|-----|----------|:-:
 portalName | String | Идентификатор портала | + 
-
 
 ## 1.5 Пример отчета
 
