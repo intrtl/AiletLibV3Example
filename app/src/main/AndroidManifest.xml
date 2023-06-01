@@ -13,6 +13,9 @@
         android:theme="@style/Theme.AiletV3Test"
         tools:targetApi="31">
         <activity
+            android:name=".MainActivityJava"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
