@@ -17,7 +17,8 @@
     - [1.4.4 Получение отчета по визиту. Метод getReports()](#144-получение-отчета-по-визиту-метод-getreports)
     - [1.4.5 Отображение сводного отчета по визиту. Метод showSummaryReport()](#145-отображение-сводного-отчета-по-визиту-метод-showsummaryreport)
     - [1.4.6 Выбор активного портала. Метод setPortal()](#146-выбор-активного-портала-метод-setportal)
-  - [1.5 Пример отчета](#15-пример-отчета)
+  - [1.5 Широковещательное (broadcast) сообщение](#15-широковещательное-broadcast-сообщение)
+  - [1.6 Пример отчета](#16-пример-отчета)
 
 ## 1.1. Подключение используя Maven (GitHub)
 
@@ -266,7 +267,67 @@ visitType       |String      | Тип визита (before, after).         | | 
 ---------|-----|----------|:-:
 portalName | String | Идентификатор портала | + 
 
-## 1.5 Пример отчета
+## 1.5 Широковещательное (broadcast) сообщение 
+
+При получении всех данных по визту приложение Ailet генерирует широковещательное сообщение с ```intent.action = com.ailet.app.BROADCAST_WIDGETS_RECEIVED``` (либо ```com.ailet.russia.BROADCAST_WIDGETS_RECEIVED```).
+
+**Пример обработки сообщения**
+
+```kotlin
+broadcastReceiver = object : BroadcastReceiver() {
+    override fun onReceive(context: Context, intent: Intent) {
+        parseBroadcaseMesasge(intent)
+    }
+}
+
+registerReceiver(
+    broadcastReceiver,
+    IntentFilter(IR_BROADCAST_V3)
+)
+...
+
+private const val NOT_SET = "not set"
+private const val VISIT_ID = "visit_id"
+private const val INTERNAL_VISIT_ID = "internal_visit_id"
+private const val STORE_ID = "store_id"
+private const val TASK_ID = "task_id"
+private const val TOTAL_PHOTOS = "total_photos"
+private const val COMPLETED_PHOTOS = "completed_photos"
+private const val RESULT = "result"
+
+private fun parseBroadcaseMesasge(intent: Intent) {
+    val extras = intent.extras
+    val visitId = extras?.getString(VISIT_ID, NOT_SET)    
+    val internalVisitId = extras?.getString(INTERNAL_VISIT_ID, NOT_SET)    
+    val storeId = extras?.getString(STORE_ID, NOT_SET)
+    val taskId = extras?.getString(TASK_ID, NOT_SET)
+    val totalPhotos = extras?.getString(TOTAL_PHOTOS, NOT_SET)
+    val completedPhotos = extras?.getString(COMPLETED_PHOTOS, NOT_SET)
+    val result = extras?.getString(RESULT, null)
+
+    result?.let { uriString ->
+        try {
+            val fileFromUri = readFromUri(Uri.parse(uriString))
+        } catch (t: Throwable) {
+            t.printStackTrace()
+        }
+    }    
+}
+```
+
+**Intent extras**
+
+Параметр | Тип | Описание 
+---------|-----|----------
+internal_visit_id           |String      | Внутренний (Ailet) ИД визита
+visit_id           |String      | ИД визита
+store_id           |String      | ИД торговой точки
+user_id           |String      | ИД пользователя (Ailet)
+total_photos           |Int      | Количество фото в визите
+completed_photos           |Int      | Количество обработанных фото
+result           | String | Uri файла отчета 
+
+## 1.6 Пример отчета
 
 ```json
 {
