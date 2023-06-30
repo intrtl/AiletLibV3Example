@@ -27,7 +27,7 @@ public class MainActivityJava extends AppCompatActivity {
                             null,
                             false,
                             null,
-                            false
+                            true
                     ).execute(
                             result -> {
 
