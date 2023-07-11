@@ -32,17 +32,18 @@ public class MainActivityJava extends AppCompatActivity {
                             result -> {
 
                                 Ailet.getClient().start(
-                                        new AiletMethodStart.StoreId.External("storeId"),
-                                        "visitId",
+                                        new AiletMethodStart.StoreId.External("testStoreId"),
+                                        "testVisitId",
                                         null,
                                         null,
                                         null,
                                         null,
-                                        null,
-                                        null,
+                                        new AiletMethodStart.LaunchConfig()//,
+                                        // Используются в версии 3.9.2 и выше
+                                       /* null,
                                         null,
                                         new ArrayList<>(),
-                                        new AiletMethodStart.LaunchConfig()
+                                        new AiletMethodStart.LaunchConfig()*/
                                 ).execute(result1 -> {
                                             Log.i("Test", "Result");
 

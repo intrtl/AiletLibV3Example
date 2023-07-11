@@ -42,7 +42,11 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
-    def ailetLibVersion = '4.0.1'
+    def ailetLibVersion = '3.7.0'
     implementation "com.ailet.android:lib:$ailetLibVersion"
     implementation "com.ailet.android:lib-feature-techsupport-intercom:$ailetLibVersion"
+}
+
+configurations {
+    implementation.exclude group: 'com.android.support', module: 'support-v4'
 }
