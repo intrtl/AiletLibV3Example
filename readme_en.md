@@ -217,6 +217,20 @@ visitType       |String | Type of visit (before/after merchandising).  | | null
 
 The method opens the screen for viewing the summary report on the visit.
 
+### 3.6 Response Statuses
+
+| **Value** | **Code** | **Description**    |
+|----------------------|:----:|-------------------------|
+| IR\_RESULT\_OK                  | 1  | Report successfully created.                           |
+| IR\_RESULT\_EMPTY               | 2  | No data to get the report with set parameters. Check correctness of data by outlet/visit. In case the report was requested by all visits, contact tech support |
+| IR\_RESULT\_INPROGRESS          | 16 | Report is being processed.                             |
+| IR\_ERROR\_NO\_INET             | 6  |  No internet connection.                                |
+| IR\_ERROR\_TOKEN                | 7  |  Authentication error: Incorrect token.                 |
+| IR\_ERROR\_STORE\_ID\_INCORRECT | 10 |  Incorrect store ID received from external application. |
+| IR\_ERROR\_VISIT\_ID\_INCORRECT | 12 | Incorrect visit id received from external application. |
+| IR\_ERROR\_AUTH                 | 13 | Authentication error.                                  |
+| IR\_ERROR\_NOVISIT              | 17 | There is no visit with such ID in the application.         |
+
 Parameter | Type | Description | Required | By default
 ---------|-----|----------|:-:|:-:
 externalVisitId |String | External visit ID | + |  
