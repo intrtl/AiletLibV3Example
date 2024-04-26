@@ -30,21 +30,27 @@ private fun visit() {
 }
 
 override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
-    
-    super.onActivityResult(requestCode, resultCode, intent)        
+    super.onActivityResult(requestCode, resultCode, intent)
+        
+    when (resultCode) {
+        RESULT_OK -> {
 
-    if (resultCode == RESULT_OK) {
-            
             intent?.data?.let { uri ->
-                val result = readFromUri(uri)                
+                val result = readFromUri(uri)
                 try {
                     val json = JSONObject(result)
-                    
                 } catch (t: Throwable) {
                     t.printStackTrace()
                 }
             }
+         }
+
+        else -> {
+            intent?.extras?.get("error")?.let { log("error: $it") }
+            intent?.extras?.get("message")?.let { log("error message: $it") }
+        }
     }
+}
 
 ```
 ```Intent.extras``` содержит следующие параметры:
