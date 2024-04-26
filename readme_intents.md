@@ -34,7 +34,6 @@ override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?
         
     when (resultCode) {
         RESULT_OK -> {
-
             intent?.data?.let { uri ->
                 val result = readFromUri(uri)
                 try {
