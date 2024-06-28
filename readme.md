@@ -1,8 +1,8 @@
 ![Latest Release](https://img.shields.io/badge/latest%20release-4.5.4-brightgreen)
 
-# 1. Integrate Ailet library into project111
+# 1. Integrate Ailet library into project
 
-- [1. Integrate Ailet library into project111](#1-integrate-ailet-library-into-project111)
+- [1. Integrate Ailet library into project](#1-integrate-ailet-library-into-project)
   - [1.1. Подключение используя Maven (GitHub)](#11-подключение-используя-maven-github)
     - [1.1.1. Создайте GitHub personal access token](#111-создайте-github-personal-access-token)
     - [1.1.2. Добавьте в проект репозиторий Ailet](#112-добавьте-в-проект-репозиторий-ailet)
@@ -17,6 +17,8 @@
     - [1.3.4 Получение отчета по визиту. Метод getReports()](#134-получение-отчета-по-визиту-метод-getreports)
     - [1.3.5 Отображение сводного отчета по визиту. Метод showSummaryReport()](#135-отображение-сводного-отчета-по-визиту-метод-showsummaryreport)
     - [1.3.6 Выбор активного портала. Метод setPortal()](#136-выбор-активного-портала-метод-setportal)
+    - [1.3.7 Загрузка справочников. Метод requestSyncCatalogs()](#137-загрузка-справочников-метод-requestsynccatalogs)
+      - [Пример загрузки справочников в мультипортальном режиме](#пример-загрузки-справочников-в-мультипортальном-режиме)
   - [1.4 Широковещательное (broadcast) сообщение](#14-широковещательное-broadcast-сообщение)
   - [1.5 Пример отчета](#15-пример-отчета)
 
@@ -135,11 +137,13 @@ Ailet.getClient()
 
 Метод  | Описание
 --- | ---
-[init](#метод-init) | Инициализация библиотеки, авторизация пользователя и загрузка справочников.
-[start](#метод-start) | Старт визита.
-[getReports](#метод-reports) | Возвращает отчет по указанному визиту.
-[showSummaryReport](#метод-showsummaryreport) | Сводный отчет по указанному визиту.
-[setPortal](#метод-setportal) | Установка активного портала.
+[init](#132-инициализация-библиотеки-метод-init) | Инициализация библиотеки, авторизация пользователя и загрузка справочников.
+[getServers](#131-список-доступных-серверов-метод-getservers) | Получение списка доступных порталов.
+[start](#133-начало-визита-метод-start) | Старт визита.
+[getReports](#134-получение-отчета-по-визиту-метод-getreports) | Возвращает отчет по указанному визиту.
+[showSummaryReport](#135-отображение-сводного-отчета-по-визиту-метод-showsummaryreport) | Сводный отчет по указанному визиту.
+[setPortal](#136-выбор-активного-портала-метод-setportal) | Установка активного портала.
+[requestSyncCatalogs](#137-загрузка-справочников-метод-requestsynccatalogs) | Загрузка справочников.
 
 Для удобства перехода на новый клиент, в аннотацию Deprecated каждого метода ``IntRtl`` добавлены блоки ``ReplaceWith``, позволяющие автоматически заменить старый метод на новый с помощью подсказок Android Studio.
 
@@ -266,6 +270,44 @@ visitType       |String      | Тип визита (before, after).         | | 
 Параметр | Тип | Описание | Обязательный 
 ---------|-----|----------|:-:
 portalName | String | Идентификатор портала | + 
+
+### 1.3.7 Загрузка справочников. Метод requestSyncCatalogs()
+
+Метод нужен для загрузки справочника выбранного портала в мультипортальном режиме.
+
+Параметр | Тип | Описание | По умолчанию
+---------|-----|----------|:-:
+syncMode | AiletMethodSyncCatalogs.SyncMode | AiletMethodSyncCatalogs.SyncMode.EAGER - загрузка все справочников</br>AiletMethodSyncCatalogs.SyncMode.SOFT - загрузка только обязательных справочников | AiletMethodSyncCatalogs.SyncMode.EAGER
+strategy | AiletMethodSyncCatalogs.Strategy | AiletMethodSyncCatalogs.Strategy.Schedule - поставить загрузку справочников в очередь </br>AiletMethodSyncCatalogs.Strategy.SyncRightNow - синхронизировать немедленно | AiletMethodSyncCatalogs.Strategy.Schedule
+
+#### Пример загрузки справочников в мультипортальном режиме
+
+```kotlin
+Ailet.getClient()
+    .getServers(
+        "login",
+        "password",
+        "external_user_id"
+    )
+    .execute({ result ->
+        runBlocking {
+            async(Dispatchers.Default) {
+                result.servers.forEach { server ->
+                    Ailet.getClient().setPortal(
+                        portalName = server.name
+                    ).executeBlocking()
+                    
+                    Ailet.getClient().requestSyncCatalogs(
+                        syncMode = AiletMethodSyncCatalogs.SyncMode.EAGER,
+                        strategy = AiletMethodSyncCatalogs.Strategy.SyncRightNow
+                    ).executeBlocking()
+                }
+            }.await()
+            
+            //Действия выполняемые после загрузки всех справочников
+    }, { })
+```
+
 
 ## 1.4 Широковещательное (broadcast) сообщение 
 
