@@ -1,8 +1,8 @@
 ![Latest Release](https://img.shields.io/badge/latest%20release-4.5.4-brightgreen)
 
-# 1. Integrate Ailet library into project
+# 1. Integrate Ailet library into project111
 
-- [1. Integrate Ailet library into project](#1-integrate-ailet-library-into-project)
+- [1. Integrate Ailet library into project111](#1-integrate-ailet-library-into-project111)
   - [1.1. Подключение используя Maven (GitHub)](#11-подключение-используя-maven-github)
     - [1.1.1. Создайте GitHub personal access token](#111-создайте-github-personal-access-token)
     - [1.1.2. Добавьте в проект репозиторий Ailet](#112-добавьте-в-проект-репозиторий-ailet)
