@@ -71,11 +71,12 @@ dependencyResolutionManagement {
 ### 1.3. Add the following two dependencies to ``build.gradle`` file of the module
 
 ```groovy
-def ailetLibVersion = '4.5.4'
-// the Ailet Lib module
-implementation "com.ailet.android:lib:$ailetLibVersion"
-// optional: the technical support module
-implementation "com.ailet.android:lib-feature-techsupport-intercom:$ailetLibVersion"
+// Ailet library
+implementation "com.ailet.android:lib:1.0.0" // Specify a specific version (list of versions at https://github.com/intrtl/IRLib/packages/1361609/versions)
+implementation "com.ailet.android:lib:+" // Latest available version
+// Optional: tech support module
+implementation "com.ailet.android:lib-feature-techsupport-intercom:1.0.0" // Specific version, matches the library version
+implementation "com.ailet.android:lib-feature-techsupport-intercom:+" // Latest available version
 ```
 
 ## 2. Usage

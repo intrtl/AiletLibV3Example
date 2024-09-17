@@ -74,11 +74,12 @@ dependencyResolutionManagement {
 ### 1.1.3. Добавьте в build.gradle модуля две зависимости:
 
 ```groovy
-def ailetLibVersion = '4.5.4'
 // библиотека Ailet
-implementation "com.ailet.android:lib:$ailetLibVersion"
+implementation "com.ailet.android:lib:1.0.0"// Указать конкретную версию (список версий по ссылке https://github.com/intrtl/IRLib/packages/1361609/versions)
+implementation "com.ailet.android:lib:+"// Последняя доступная версия
 // необязательно: модуль техподдержки
-implementation "com.ailet.android:lib-feature-techsupport-intercom:$ailetLibVersion"
+implementation "com.ailet.android:lib-feature-techsupport-intercom:1.0.0"// Конкретная версия, совпадает с версией библиотеки
+implementation "com.ailet.android:lib-feature-techsupport-intercom:+"// Последняя доступная версия
 ```
 
 ## 1.2. Использование
