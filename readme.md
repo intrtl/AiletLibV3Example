@@ -73,6 +73,8 @@ dependencyResolutionManagement {
 
 ### 1.1.3. Добавьте в build.gradle модуля две зависимости:
 
+[Список версий](https://github.com/intrtl/IRLib/packages/1361609/versions)
+
 ```groovy
 // библиотека Ailet
 implementation "com.ailet.android:lib:1.0.0"// Указать конкретную версию (список версий по ссылке https://github.com/intrtl/IRLib/packages/1361609/versions)

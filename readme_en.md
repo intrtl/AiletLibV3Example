@@ -70,6 +70,8 @@ dependencyResolutionManagement {
 
 ### 1.3. Add the following two dependencies to ``build.gradle`` file of the module
 
+[List of versions](https://github.com/intrtl/IRLib/packages/1361609/versions)
+
 ```groovy
 // Ailet library
 implementation "com.ailet.android:lib:1.0.0" // Specify a specific version (list of versions at https://github.com/intrtl/IRLib/packages/1361609/versions)
