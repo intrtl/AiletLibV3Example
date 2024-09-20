@@ -234,7 +234,7 @@ server          |AiletServer | Сервер, на который выполня�
 isNeedSyncCatalogs|Boolean | Необходимость синхронизации каталогов.     | | true
 
 **Ошибки**
-Ошибка  | Текст | Описание
+Ошибка  | Текст ошибки | Описание
 ---------|----------|----------
 DataInconsistencyException | Current auth state data is null | Данные аутенитификации не корректны
 IllegalStateException | Inconsistency! server is null | Сервер пустой
@@ -263,7 +263,7 @@ sceneTypes | List | Список типов сцен | | listOf()
 launchConfig | LaunchConfig | Конфигурация запуска | | AiletMethodStart.LaunchConfig()
 
 **Ошибки**
-Ошибка  | Текст | Описание
+Ошибка  | Текст ошибки | Описание
 ---------|----------
 Throwable | Uneditable(historical) visit | Завершенный визит (не редактируемый)
 IllegalStateException | Inconsistent AiletClient state: (Unknown, Warning, Error) | Ошибка несогласования (с кодом)
@@ -280,7 +280,7 @@ taskId       |String      | Внешний идентификатор задач
 visitType       |String      | Тип визита (before, after).         | | null 
 
 **Ошибки**
-Ошибка  | Текст | Описание
+Ошибка  | Текст ошибки | Описание
 ---------|----------|----------
 AiletException | Visit with externalId [externalId] is not found | Визит в идентификатором не найден
 
@@ -313,7 +313,7 @@ RuntimeException | No visit/Offline
 portalName | String | Идентификатор портала | + 
 
 **Ошибки**
-Ошибка  | Текст | Описание
+Ошибка  | Текст ошибки | Описание
 ---------|----------|----------
 Throwable | Unauthorized | Не авторизован
 IllegalArgumentException | No [server] found in local portals list | Не найден сервер в списке 
@@ -329,7 +329,7 @@ syncMode | AiletMethodSyncCatalogs.SyncMode | AiletMethodSyncCatalogs.SyncMode.E
 strategy | AiletMethodSyncCatalogs.Strategy | AiletMethodSyncCatalogs.Strategy.Schedule - поставить загрузку справочников в очередь </br>AiletMethodSyncCatalogs.Strategy.SyncRightNow - синхронизировать немедленно | AiletMethodSyncCatalogs.Strategy.Schedule
 
 **Ошибки**
-Ошибка  | Текст | Описание
+Ошибка  | Текст ошибки | Описание
 ---------|----------|----------
 Throwable | Unauthorized | Не авторизован
 
@@ -372,7 +372,7 @@ taskId       |String      | Внешний идентификатор задач
 visitType       |String      | Тип визита (before, after).         | | null 
 
 Ошибки
-Ошибка  | Текст | Описание
+Ошибка  | Текст ошибки | Описание
 ---------|----------|----------
 Throwable | Unauthorized
 IllegalArgumentException | Нет визита
@@ -387,7 +387,7 @@ IndexOutOfBoundsException | Визит пустой
 externalVisitId | String | Внешний идентификатор визита. | +  
 
 Ошибки
-Ошибка  | Текст | Описание
+Ошибка  | Текст ошибки | Описание
 ---------|----------|----------
 Throwable | Unauthorized
 AiletException | Visit with externalId [externalVisitId] is already finished
