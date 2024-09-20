@@ -218,7 +218,7 @@ externalUserId  |String      | Внешний идентификатор пол�
 **Ошибки**
 Ошибка  | Описание 
 ---------|----------
-BackendApiException | Ошибка сервера с [HHTP кодом](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) 
+BackendApiException | Ошибка сервера с [HTTP кодом](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) 
 
 ### 1.3.2 Инициализация библиотеки. Метод init()
 
