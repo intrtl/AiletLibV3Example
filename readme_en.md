@@ -132,10 +132,12 @@ The methods of the new client conceptually correspond to
 Method  | Description
 --- | ---
 [init]() | Initializing the library, authorizing the user, and loading catalogs.
+[getServers]() | Obtaining the list of available servers.
 [start]() | Starting the visit.
 [getReports]() | Returning the report on the specified visit.
 [showSummaryReport]() | Summary report on the specified visit.
 [setPortal]() | Choosing a portal to work with.
+[requestSyncCatalogs]() | Downloading the catalog of the selected portal.
 
 For the convenience of switching to a new client, ``replaceWith`` blocks have been added to the Deprecated annotation of each ``IntRtl`` method, allowing you to automatically replace the old method with a new one using Android Studio prompts.
 
@@ -233,6 +235,49 @@ The method is used to install the current portal in multi-portal mode.
 Parameter | Type | Description | Required 
 ---------|-----|----------|:-:
 portalName | String |Portal ID | + 
+
+### 3. The requestSyncCatalogs() method. Downloading catalogs
+
+The method is needed to load the catalog of the selected portal in multiportal mode.
+
+Parameter | Type | Description | Default
+---------|-----|----------|:-:
+syncMode | AiletMethodSyncCatalogs.SyncMode | AiletMethodSyncCatalogs.SyncMode.EAGER - loading all catalogs </br>AiletMethodSyncCatalogs.SyncMode.SOFT - loading only mandatory catalogs | AiletMethodSyncCatalogs.SyncMode.EAGER
+strategy | AiletMethodSyncCatalogs.Strategy | AiletMethodSyncCatalogs.Strategy.Schedule - queue the loading of catalogs </br>AiletMethodSyncCatalogs.Strategy.SyncRightNow - synchronize immediately | AiletMethodSyncCatalogs.Strategy.Schedule
+
+**Errors**
+
+Error | Error text | Description
+---------|----------|----------
+Throwable | Unauthorized | Not authorized
+
+#### Example of loading catalogs in multiportal mode
+
+```kotlin
+Ailet.getClient()
+    .getServers(
+        "login",
+        "password",
+        "external_user_id"
+    )
+    .execute({ result ->
+        runBlocking {
+            async(Dispatchers.Default) {
+                result.servers.forEach { server ->
+                    Ailet.getClient().setPortal(
+                        portalName = server.name
+                    ).executeBlocking()
+                    
+                    Ailet.getClient().requestSyncCatalogs(
+                        syncMode = AiletMethodSyncCatalogs.SyncMode.EAGER,
+                        strategy = AiletMethodSyncCatalogs.Strategy.SyncRightNow
+                    ).executeBlocking()
+                }
+            }.await()
+            
+            //Actions performed after loading all catalogs
+    }, { })
+```
 
 
 ## 4. Sample report
