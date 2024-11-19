@@ -389,9 +389,9 @@ externalVisitId | String | Внешний идентификатор визит�
 Ошибки
 Ошибка  | Текст ошибки | Описание
 ---------|----------|----------
-Throwable | Unauthorized
-AiletException | Visit with externalId [externalVisitId] is already finished
-AiletException | Visit with externalId [externalVisitId] is not found
+Throwable | Unauthorized | Не авторизован
+AiletException | Visit with externalId [externalVisitId] is already finished | Визит завершен
+AiletException | Visit with externalId [externalVisitId] is not found | Визит не найден
 
 
 ## 1.4 Широковещательное (broadcast) сообщение 
