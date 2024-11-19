@@ -374,9 +374,9 @@ visitType       |String      | Тип визита (before, after).         | | 
 Ошибки
 Ошибка  | Текст ошибки | Описание
 ---------|----------|----------
-Throwable | Unauthorized
-IllegalArgumentException | Нет визита
-IndexOutOfBoundsException | Визит пустой
+Throwable | Unauthorized | Не авторизован
+IllegalArgumentException | No visit with id: [visitId] | Нет визита
+IndexOutOfBoundsException | No photos in visit with id: [$visitId] | Визит пустой
 
 ### 1.3.9 Завершение визита. Метод finishVisit()
 
