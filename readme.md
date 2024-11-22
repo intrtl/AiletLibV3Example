@@ -378,6 +378,7 @@ visitType       |String      | Тип визита (before, after).         | | 
 Throwable | Unauthorized | Не авторизован
 IllegalArgumentException | No visit with id: [visitId] | Нет визита
 IndexOutOfBoundsException | No photos in visit with id: [$visitId] | Визит пустой
+RuntimeException | No visit/Offline | Нет локальноного визита и устройство оффлайн (невозможно проверить есть ли визит на сервере)
 BackendApiException | | Ошибка сервера с [HTTP кодом](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) 
 
 ### 1.3.9 Завершение визита. Метод finishVisit()
