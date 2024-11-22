@@ -302,6 +302,7 @@ IllegalArgumentException | No store for externalId [externalId]
 IllegalArgumentException | No store for storeId [storeId]
 IllegalArgumentException | No visit for summary report request $param found
 IllegalArgumentException | Incorrect historical visit params
+BackendApiException | | Ошибка сервера с [HTTP кодом](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) 
 RuntimeException | No visit/Offline
 
 ### 1.3.6 Выбор активного портала. Метод setPortal()
@@ -377,6 +378,7 @@ visitType       |String      | Тип визита (before, after).         | | 
 Throwable | Unauthorized | Не авторизован
 IllegalArgumentException | No visit with id: [visitId] | Нет визита
 IndexOutOfBoundsException | No photos in visit with id: [$visitId] | Визит пустой
+BackendApiException | | Ошибка сервера с [HTTP кодом](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) 
 
 ### 1.3.9 Завершение визита. Метод finishVisit()
 
