@@ -22,6 +22,7 @@
     - [1.3.8 Отображение визита. Метод showVisit()](#138-отображение-визита-метод-showvisit)
     - [1.3.9 Завершение визита. Метод finishVisit()](#139-завершение-визита-метод-finishvisit)
     - [1.3.10 Выход пользователя. Метод logout()](#1310-выход-пользователя-метод-logout)
+    - [1.3.11 Статистика синхронизации визитов. Метод getTotalSyncStat()](#1311-статистика-синхронизации-визитов-метод-gettotalsyncstat)
   - [1.4 Широковещательное (broadcast) сообщение](#14-широковещательное-broadcast-сообщение)
   - [1.7 Известные проблемы и их устранение](#17-известные-проблемы-и-их-устранение)
     - [1.7.1 Gradle 8.x и обсфукация](#171-gradle-8x-и-обсфукация)
@@ -268,8 +269,9 @@ sceneTypes | List | Список типов сцен | | listOf()
 launchConfig | LaunchConfig | Конфигурация запуска | | AiletMethodStart.LaunchConfig()
 
 **Ошибки**
+
 Ошибка  | Текст ошибки | Описание
----------|----------
+---------|---------- | ----
 Throwable | Uneditable(historical) visit | Завершенный визит (не редактируемый)
 IllegalStateException | Inconsistent AiletClient state: (Unknown, Warning, Error) | Ошибка несогласования (с кодом)
 Throwable | Unauthorized | Не авторизован
@@ -300,9 +302,9 @@ taskId       |String      | Внешний идентификатор задач
 visitType       |String      | Тип визита (before, after).         | | null
 
 **Ошибки**
-Ошибка  | Описание 
----------|----------|----------
-Throwable | Unauthorized4
+Ошибка  | Описание  
+---------|----------
+Throwable | Unauthorized4 
 IllegalArgumentException | No store for externalId [externalId]
 IllegalArgumentException | No store for storeId [storeId]
 IllegalArgumentException | No visit for summary report request $param found
@@ -404,6 +406,46 @@ AiletException | Visit with externalId [externalVisitId] is not found | Визи
 ### 1.3.10 Выход пользователя. Метод logout()
 
 Метод реализует выход пользователя, при этом будут очищенны только служебные данные, визиты пользователя будут удалены только с том случае, если после `logout` в `init` будет передан новый пользователь.
+
+### 1.3.11 Статистика синхронизации визитов. Метод getTotalSyncStat()
+> Версия библиотеки: 4.17.3 и выше
+
+Метод возвращает информацию по статистике фотографий и запускает сервис синхронизации, если он остановлен. Результатом работы метода является строка в формате json.
+
+**Пример ответа**
+```json
+{
+    "items": [
+        {
+            "visit_id": "3",
+            "visit_external_id": "156r459",
+            "total_photos": 10,
+            "sent_photos": 10,
+            "completed_photos": 10,
+            "code": "RESULT_OK",
+            "code_int": 1,
+            "message": "Успешно обработан"
+        },
+        {
+            "visit_id": "2",
+            "visit_external_id": "156r46",
+            "total_photos": 10,
+            "sent_photos": 1,
+            "completed_photos": 0,
+            "code": "IN_PROGRESS",
+            "code_int": 16,
+            "message": "Выполняется синхронизация"
+        }
+    ],
+    "total_stat": {
+        "total_photos": 20,
+        "sent_photos": 11,
+        "completed_photos": 10,
+        "current_problem": "Ошибка отправки фото на сервер"
+    }
+}
+```
+
 
 ## 1.4 Широковещательное (broadcast) сообщение 
 
