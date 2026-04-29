@@ -23,6 +23,7 @@
     - [1.3.9 Завершение визита. Метод finishVisit()](#139-завершение-визита-метод-finishvisit)
     - [1.3.10 Выход пользователя. Метод logout()](#1310-выход-пользователя-метод-logout)
     - [1.3.11 Статистика синхронизации визитов. Метод getTotalSyncStat()](#1311-статистика-синхронизации-визитов-метод-gettotalsyncstat)
+    - [1.3.12 Синхронизация моделей On-device. Метод syncPalomna()](#1312-синхронизация-моделей-on-device-метод-syncpalomna)
   - [1.4 Широковещательное (broadcast) сообщение](#14-широковещательное-broadcast-сообщение)
   - [1.7 Известные проблемы и их устранение](#17-известные-проблемы-и-их-устранение)
     - [1.7.1 Gradle 8.x и обсфукация](#171-gradle-8x-и-обсфукация)
@@ -155,6 +156,7 @@ Ailet.getClient()
 [showSummaryReport](#135-отображение-сводного-отчета-по-визиту-метод-showsummaryreport) | Сводный отчет по указанному визиту.
 [setPortal](#136-выбор-активного-портала-метод-setportal) | Установка активного портала.
 [requestSyncCatalogs](#137-загрузка-справочников-метод-requestsynccatalogs) | Загрузка справочников.
+[syncPalomna](#1312-синхронизация-моделей-on-device-метод-syncpalomna) | Загрузка моделей и справочников для on-device распознавания (с версии 4.20).
 
 Для удобства перехода на новый клиент, в аннотацию Deprecated каждого метода ``IntRtl`` добавлены блоки ``ReplaceWith``, позволяющие автоматически заменить старый метод на новый с помощью подсказок Android Studio.
 
@@ -253,7 +255,9 @@ BackendApiException | | Ошибка сервера с [HTTP кодом](https:/
 
 ### 1.3.3 Начало визита. Метод start()
 
-Метод запускает съемку в рамках визита.
+Метод запускает съемку в рамках визита. 
+
+> **On-device (v4.20+):** Если модели и классы для on-device распознавания загружены, то при отсутствии интернета фотографии будут обработаны локально на устройстве.
 
 Параметр | Тип | Описание | Обязательный | По умолчанию
 ---------|-----|----------|:-:|---
@@ -292,10 +296,17 @@ visitType       |String      | Тип визита (before, after).         | | 
 Ошибка  | Текст ошибки | Описание
 ---------|----------|----------
 AiletException | Visit with externalId [externalId] is not found | Визит в идентификатором не найден
+OnDeviceNotAvailableException | On-device recognition not available | **(v4.20+)** On-device распознавание недоступно (при отсутствии сети и незагруженных моделях)
+
+> **On-device (v4.20+):** В результат отчета (поле `result` и `report.result`) добавляются поля:
+> - `source`: `"online"` (все фото распознаны на сервере) или `"on-device"` (хотя бы одно фото распознано только локально).
+> - `completed_on_device`: количество фото, распознанных on-device.
 
 ### 1.3.5 Отображение сводного отчета по визиту. Метод showSummaryReport()
 
-Метод открывает экран просмотра сводного отчета по визиту.
+Метод открывает экран просмотра сводного отчета по визиту. 
+
+> **On-device (v4.20+):** Поддерживает отображение данных, полученных в ходе on-device распознавания.
 
 Параметр | Тип | Описание | Обязательный | По умолчанию
 ---------|-----|----------|:-:|:-:
@@ -316,7 +327,9 @@ RuntimeException | No visit/Offline
 
 ### 1.3.6 Выбор активного портала. Метод setPortal()
 
-Метод используется для установки текущего портала в мультипортальном режиме.
+Метод используется для установки текущего портала в мультипортальном режиме. 
+
+> **On-device (v4.20+):** При переключении портала также сохраняются и применяются настройки on-device распознавания для конкретного портала. Для использования on-deive распознавания необходимо выполнить `syncPalomna()` после переключения портала (если ранее для этого портала не было выполнено).
 
 Параметр | Тип | Описание | Обязательный 
 ---------|-----|----------|:-:
@@ -407,12 +420,16 @@ AiletException | Visit with externalId [externalVisitId] is not found | Визи
 
 ### 1.3.10 Выход пользователя. Метод logout()
 
-Метод реализует выход пользователя, при этом будут очищенны только служебные данные, визиты пользователя будут удалены только с том случае, если после `logout` в `init` будет передан новый пользователь.
+Метод реализует выход пользователя, при этом будут очищенны только служебные данные. 
+
+> **On-device (v4.20+):** Если в мобильных настройках включено on-device распознавание, будут также удалены загруженные модели, классы и справочники (только если после `logout` в `init` будет передан новый пользователь).
 
 ### 1.3.11 Статистика синхронизации визитов. Метод getTotalSyncStat()
-> Версия библиотеки: 4.17.3 и выше
+> Версия библиотеки: 4.17.3 и выше (новые поля доступны с 4.20)
 
 Метод возвращает информацию по статистике фотографий и запускает сервис синхронизации, если он остановлен. Результатом работы метода является строка в формате json.
+
+> **On-device (v4.20+):** В каждый элемент `items` и в `total_stat` добавляется поле `source` ("online"/"on-device") и `completed_on_device`.
 
 **Пример ответа**
 ```json
@@ -420,20 +437,24 @@ AiletException | Visit with externalId [externalVisitId] is not found | Визи
     "items": [
         {
             "visit_id": "3",
+            "source": "online",
             "visit_external_id": "156r459",
             "total_photos": 10,
             "sent_photos": 10,
             "completed_photos": 10,
+            "completed_on_device": 2,
             "code": "RESULT_OK",
             "code_int": 1,
             "message": "Успешно обработан"
         },
         {
             "visit_id": "2",
+            "source": "on-device",
             "visit_external_id": "156r46",
             "total_photos": 10,
             "sent_photos": 1,
             "completed_photos": 0,
+            "completed_on_device": 9,
             "code": "IN_PROGRESS",
             "code_int": 16,
             "message": "Выполняется синхронизация"
@@ -443,10 +464,29 @@ AiletException | Visit with externalId [externalVisitId] is not found | Визи
         "total_photos": 20,
         "sent_photos": 11,
         "completed_photos": 10,
+        "completed_on_device": 11,
         "current_problem": "Ошибка отправки фото на сервер"
     }
 }
 ```
+
+### 1.3.12 Синхронизация моделей On-device. Метод syncPalomna()
+> **On-device (v4.20+):** 
+
+Метод предназначен для предварительной загрузки и обновления моделей, классов и справочников, необходимых для распознавания на устройстве без интернета.
+
+Параметр | Тип | Описание | Обязательный | По умолчанию
+---------|-----|----------|:---------:|:-----------------:
+storeIds | List<Int> | Массив внешних идентификаторов ТТ | | null
+useMobile | Boolean | Разрешить синхронизацию через мобильную сеть | | false
+isAutoUpdate | Boolean | Автоматическое обновление моделей без запроса пользователя | | false
+
+**Ошибки**
+Ошибка  | Текст ошибки | Описание
+---------|----------|----------
+OnDeviceNotAvailableException | On-device not available | On-device распознавание недоступно (выключено в настройках)
+OnDeviceDownloadMobileException | Cant download via mobile network | Запрещена загрузка через мобильную сеть (useMobile = false)
+Throwable | Unauthorized | Не авторизован
 
 
 ## 1.4 Широковещательное (broadcast) сообщение 
@@ -475,6 +515,8 @@ private const val STORE_ID = "store_id"
 private const val TASK_ID = "task_id"
 private const val TOTAL_PHOTOS = "total_photos"
 private const val COMPLETED_PHOTOS = "completed_photos"
+private const val COMPLETED_ON_DEVICE = "completed_on_device"
+private const val SOURCE = "source"
 private const val RESULT = "result"
 
 private fun parseBroadcaseMesasge(intent: Intent) {
@@ -483,8 +525,10 @@ private fun parseBroadcaseMesasge(intent: Intent) {
     val internalVisitId = extras?.getString(INTERNAL_VISIT_ID, NOT_SET)    
     val storeId = extras?.getString(STORE_ID, NOT_SET)
     val taskId = extras?.getString(TASK_ID, NOT_SET)
-    val totalPhotos = extras?.getString(TOTAL_PHOTOS, NOT_SET)
-    val completedPhotos = extras?.getString(COMPLETED_PHOTOS, NOT_SET)
+    val totalPhotos = extras?.getInt(TOTAL_PHOTOS, 0)
+    val completedPhotos = extras?.getInt(COMPLETED_PHOTOS, 0)
+    val completedOnDevice = extras?.getInt(COMPLETED_ON_DEVICE, 0)
+    val source = extras?.getString(SOURCE, "online")
     val result = extras?.getString(RESULT, null)
 
     result?.let { uriString ->
@@ -507,7 +551,9 @@ store_id           |String      | ИД торговой точки
 user_id           |String      | ИД пользователя (Ailet)
 total_photos           |Int      | Количество фото в визите
 completed_photos           |Int      | Количество обработанных фото
-result           | String | Uri файла отчета 
+completed_on_device        |Int      | **(v4.20+)** Количество фото, распознанных on-device
+source                     |String   | **(v4.20+)** Источник данных (online/on-device)
+result                     |String   | Uri файла отчета
 
 ## 1.7 Известные проблемы и их устранение
 
@@ -535,8 +581,9 @@ result           | String | Uri файла отчета
     "visit_id": "2",
     "status": "RESULT_OK",
     "result": {
+        "source": "on-device",
         "visit_id": "2",
-        "total_photos": 0,
+        "total_photos": 4,
         "sended_photos": 0,
         "code": "RESULT_OK",
         "codeInt": 1,
@@ -903,6 +950,7 @@ result           | String | Uri файла отчета
         "photo": {
             "badQuality": 0,
             "completed": 4,
+            "completed_on_device": 4,
             "created": 0,
             "deleted": 1,
             "goodQuality": 4,
