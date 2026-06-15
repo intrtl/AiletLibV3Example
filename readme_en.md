@@ -7,6 +7,7 @@
     - [1.1. Create a GitHub personal access token](#11-create-a-github-personal-access-token)
     - [1.2. Add the Ailet repository to the project](#12-add-the-ailet-repository-to-the-project)
     - [1.3. Add the following two dependencies to ``build.gradle`` file of the module](#13-add-the-following-two-dependencies-to-buildgradle-file-of-the-module)
+    - [1.4. Proguard rules](#14-proguard-rules)
   - [2. Usage](#2-usage)
     - [2.1. Initialization](#21-initialization)
     - [2.2. Usage](#22-usage)
@@ -17,6 +18,8 @@
     - [3.4 The getReports() method. Getting a report on the visit](#34-the-getreports-method-getting-a-report-on-the-visit)
     - [3.5 The showSummaryReport() method. Displaying a summary report on the visit](#35-the-showsummaryreport-method-displaying-a-summary-report-on-the-visit)
     - [3.6 The setPortal() method. Choosing the active portal](#36-the-setportal-method-choosing-the-active-portal)
+    - [3. The requestSyncCatalogs() method. Downloading catalogs](#3-the-requestsynccatalogs-method-downloading-catalogs)
+      - [Example of loading catalogs in multiportal mode](#example-of-loading-catalogs-in-multiportal-mode)
   - [4. Sample report](#4-sample-report)
 
 ## 1. Connecting the Ailet Lib module using Maven (GitHub)
@@ -79,6 +82,33 @@ implementation "com.ailet.android:lib:+" // Latest available version
 // Optional: tech support module
 implementation "com.ailet.android:lib-feature-techsupport-intercom:1.0.0" // Specific version, matches the library version
 implementation "com.ailet.android:lib-feature-techsupport-intercom:+" // Latest available version
+```
+
+### 1.4. Proguard rules
+
+```kotlin
+-keep class com.ailet.lib3.** { *; }
+-keep interface com.ailet.lib3.** { *; }
+-keep enum com.ailet.lib3.** { *; }
+
+-keepclassmembers class com.ailet.lib3.** {
+    *** *(...);
+}
+
+-keepnames class com.ailet.lib3.** { *; }
+-keepattributes *Annotation*
+#
+## Правила для Gson
+-keep class com.google.gson.** { *; }
+-keep class sun.misc.Unsafe { *; }
+-keep interface com.google.gson.TypeAdapter
+-keep interface com.google.gson.JsonSerializer
+-keep interface com.google.gson.JsonDeserializer
+
+-dontwarn com.ailet.lib3.**
+
+-keepattributes Signature
+-keepattributes *Annotation*
 ```
 
 ## 2. Usage

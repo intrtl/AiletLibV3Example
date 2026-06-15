@@ -7,6 +7,7 @@
     - [1.1.1. Создайте GitHub personal access token](#111-создайте-github-personal-access-token)
     - [1.1.2. Добавьте в проект репозиторий Ailet](#112-добавьте-в-проект-репозиторий-ailet)
     - [1.1.3. Добавьте в build.gradle модуля две зависимости:](#113-добавьте-в-buildgradle-модуля-две-зависимости)
+    - [1.1.4. Proguard rules](#114-proguard-rules)
   - [1.2. Использование](#12-использование)
     - [1.2.1. Инициализация](#121-инициализация)
     - [1.2.2. Использование](#122-использование)
@@ -90,6 +91,33 @@ implementation "com.ailet.android:lib:+"// Последняя доступная
 // необязательно: модуль техподдержки
 implementation "com.ailet.android:lib-feature-techsupport-intercom:1.0.0"// Конкретная версия, совпадает с версией библиотеки
 implementation "com.ailet.android:lib-feature-techsupport-intercom:+"// Последняя доступная версия
+```
+
+### 1.1.4. Proguard rules
+
+```kotlin
+-keep class com.ailet.lib3.** { *; }
+-keep interface com.ailet.lib3.** { *; }
+-keep enum com.ailet.lib3.** { *; }
+
+-keepclassmembers class com.ailet.lib3.** {
+    *** *(...);
+}
+
+-keepnames class com.ailet.lib3.** { *; }
+-keepattributes *Annotation*
+#
+## Правила для Gson
+-keep class com.google.gson.** { *; }
+-keep class sun.misc.Unsafe { *; }
+-keep interface com.google.gson.TypeAdapter
+-keep interface com.google.gson.JsonSerializer
+-keep interface com.google.gson.JsonDeserializer
+
+-dontwarn com.ailet.lib3.**
+
+-keepattributes Signature
+-keepattributes *Annotation*
 ```
 
 ## 1.2. Использование
