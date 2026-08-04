@@ -505,7 +505,8 @@ AiletException | Visit with externalId [externalVisitId] is not found | Визи
 
 Параметр | Тип | Описание | Обязательный | По умолчанию
 ---------|-----|----------|:---------:|:-----------------:
-storeIds | List<Int> | Массив внешних идентификаторов ТТ | | null
+externalIds | List<String> | Массив внешних идентификаторов ТТ | | listOf()
+storeIds | List<Int> | Массив внутренних (библиотеки) идентификаторов ТТ | | listOf()
 useMobile | Boolean | Разрешить синхронизацию через мобильную сеть | | false
 isAutoUpdate | Boolean | Автоматическое обновление моделей без запроса пользователя | | false
 
@@ -514,8 +515,21 @@ isAutoUpdate | Boolean | Автоматическое обновление мо�
 ---------|----------|----------
 OnDeviceNotAvailableException | On-device not available | On-device распознавание недоступно (выключено в настройках)
 OnDeviceDownloadMobileException | Cant download via mobile network | Запрещена загрузка через мобильную сеть (useMobile = false)
+OnDeviceNoStoreException | Store not found |  Не найдена торговая точка 
 Throwable | Unauthorized | Не авторизован
 
+#### 1.3.12.1 Широковещательное (broadcast) сообщение 
+
+При изменении статуса загрузки Palomna библиотека генерирует широковещательное сообщение с ```intent.action = SYNC_PALOMNA_STATE```.
+
+#### Extras
+Extra  | Описание
+---------|----------
+dataSetsProgress | прогресс загрузки моделей 
+matricesProgress | прогресс загрузки матриц
+matricesTypesProgress | прогресс загрузки типов матриц
+metricsProgress |  прогресс загрузки метрик
+imagesProgress |  прогресс загрузки изображений
 
 ## 1.4 Широковещательное (broadcast) сообщение 
 
