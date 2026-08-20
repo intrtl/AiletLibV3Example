@@ -6,7 +6,7 @@ The Ailet library embeds visit shooting, reports, and synchronization into your 
 
 API classes: `Ailet`, `AiletClient`. Maven package: `com.ailet.android:lib`.
 
-To call Ailet without the library, use [integration via Android Intent](../intents/readme.md).
+To call Ailet without the library, use [integration via Android Intent](https://github.com/intrtl/AiletLibraryExamples/blob/master/Android/IrIntentExample/readme.md).
 
 - [Scenario example](#scenario-example)
 - [What you need](#what-you-need)
