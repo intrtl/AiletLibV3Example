@@ -1,4 +1,4 @@
-![Latest Release](https://img.shields.io/badge/latest%20release-4.20.4-brightgreen)
+[![Latest Release](https://img.shields.io/badge/latest%20release-4.20.4-brightgreen)](https://github.com/intrtl/IRLib/packages/1361609/versions)
 
 # Integrating the Ailet library
 
