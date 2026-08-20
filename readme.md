@@ -314,14 +314,18 @@ Ailet.getClient()
 
 ```json
 {
-    "task_id": "67",
-    "photosCounter": 4,
-    "scenesCounter": 2,
+    "photosCounter": 0,
+    "scenesCounter": 0,
     "notDetectedPhotosCounter": 0,
     "notDetectedScenesCounter": 0,
-    "local_visit_id": "e4ef7672014924-def3dccc",
-    "visit_id": "2",
-    "status": "RESULT_OK",
+    "store_id": "1",
+    "user_id": "26950",
+    "external_user_id": "1",
+    "install_id": "GEH3Z5CP",
+    "local_visit_id": "4d18faba141e8-80c51538",
+    "internal_visit_id": "4d18faba141e8-80c51538",
+    "visit_id": "qqq",
+    "status": "RESULT_EMPTY",
     "result": {
         "visit_id": "2",
         "total_photos": 0,
