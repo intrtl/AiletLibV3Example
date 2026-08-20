@@ -1,57 +1,80 @@
-![Latest Release](https://img.shields.io/badge/latest%20release-4.5.4-brightgreen)
+![Latest Release](https://img.shields.io/badge/latest%20release-4.20.4-brightgreen)
 
-# Integrating the Ailet Library v.3 for Android into your project
+# Integrating the Ailet library
 
-- [Integrating the Ailet Library v.3 for Android into your project](#integrating-the-ailet-library-v3-for-android-into-your-project)
-  - [1. Connecting the Ailet Lib module using Maven (GitHub)](#1-connecting-the-ailet-lib-module-using-maven-github)
-    - [1.1. Create a GitHub personal access token](#11-create-a-github-personal-access-token)
-    - [1.2. Add the Ailet repository to the project](#12-add-the-ailet-repository-to-the-project)
-    - [1.3. Add the following two dependencies to ``build.gradle`` file of the module](#13-add-the-following-two-dependencies-to-buildgradle-file-of-the-module)
-    - [1.4. Proguard rules](#14-proguard-rules)
-  - [2. Usage](#2-usage)
-    - [2.1. Initialization](#21-initialization)
-    - [2.2. Usage](#22-usage)
-  - [3. Methods](#3-methods)
-    - [3.1 The getServers() method. List of available servers](#31-the-getservers-method-list-of-available-servers)
-    - [3.2 The init() method. Initialization of the library](#32-the-init-method-initialization-of-the-library)
-    - [3.3 The start() method. The beginning of the visit](#33-the-start-method-the-beginning-of-the-visit)
-    - [3.4 The getReports() method. Getting a report on the visit](#34-the-getreports-method-getting-a-report-on-the-visit)
-    - [3.5 The showSummaryReport() method. Displaying a summary report on the visit](#35-the-showsummaryreport-method-displaying-a-summary-report-on-the-visit)
-    - [3.6 The setPortal() method. Choosing the active portal](#36-the-setportal-method-choosing-the-active-portal)
-    - [3. The requestSyncCatalogs() method. Downloading catalogs](#3-the-requestsynccatalogs-method-downloading-catalogs)
-      - [Example of loading catalogs in multiportal mode](#example-of-loading-catalogs-in-multiportal-mode)
-  - [4. Sample report](#4-sample-report)
+The Ailet library embeds visit shooting, reports, and synchronization into your Android app.
 
-## 1. Connecting the Ailet Lib module using Maven (GitHub)
+API classes: `Ailet`, `AiletClient`. Maven package: `com.ailet.android:lib`.
 
-Here and further we will call the Ailet Library Module as *the Ailet Lib* or simply *the module*.
+To call Ailet without the library, use [integration via Android Intent](../intents/readme.md).
 
-### 1.1. Create a GitHub personal access token
+- [Scenario example](#scenario-example)
+- [What you need](#what-you-need)
+  - [How to create a GitHub personal access token](#how-to-create-a-github-personal-access-token)
+  - [How to add the Maven repository](#how-to-add-the-maven-repository)
+  - [How to add dependencies](#how-to-add-dependencies)
+  - [ProGuard rules](#proguard-rules)
+- [How to initialize the library](#how-to-initialize-the-library)
+- [How to call methods](#how-to-call-methods)
+- [On-device recognition (Palomna)](#on-device-recognition-palomna)
+- [Method reference](#method-reference)
+  - [getServers()](#getservers)
+  - [init()](#init)
+  - [start()](#start)
+  - [getReports()](#getreports)
+  - [showSummaryReport()](#showsummaryreport)
+  - [setPortal()](#setportal)
+  - [requestSyncCatalogs()](#requestsynccatalogs)
+  - [showVisit()](#showvisit)
+  - [finishVisit()](#finishvisit)
+  - [logout()](#logout)
+  - [getTotalSyncStat()](#gettotalsyncstat)
+  - [syncPalomna()](#syncpalomna)
+- [Broadcast message](#broadcast-message)
+- [Migrating from IntRtl](#migrating-from-intrtl)
+- [Report example](#report-example)
+- [Known issues](#known-issues)
+  - [Gradle 8.x and obfuscation](#gradle-8x-and-obfuscation)
 
-- In the upper right corner of any GitHub page, click on your profile photo, and then click **Settings**.
-- In the left sidebar, select **Developer settings**
-- In the left sidebar, select **Personal access tokens**, and then click **Generate new token** to create a new token.
-- Set scope ``read:packages``
+## Scenario example
 
-### 1.2. Add the Ailet repository to the project
+To run a visit and get a report:
 
-**Option 1** (basic). Add the repository to the root ``build.gradle``:
+1. Create a GitHub personal access token with the `read:packages` scope.
+2. Add the Maven repository and the `com.ailet.android:lib` dependency.
+3. Call `Ailet.initialize` in the `Application` class.
+4. Call `init()` through `Ailet.getClient()`.
+5. Call `start()` and take photos.
+6. Wait for the report-ready broadcast or call `getReports()`.
 
-```groovy
-allprojects {
-    repositories {
-        maven {
-            url 'https://maven.pkg.github.com/intrtl/irlib'
-            credentials {
-                username 'your GitHub username'
-                password 'personal GitHub access token'
-            }
-        }
-    }
-}
-```
+## What you need
 
-**Option 2** (using ``settings.gradle`` and ``DependencyResolutionManagement``). Add the repository to ``settings.gradle``:
+- An initial authorization token. The Ailet team issues it.
+- A GitHub account that can read `intrtl/IRLib` packages.
+
+See the current library version in the [version list](https://github.com/intrtl/IRLib/packages/1361609/versions).
+
+### How to create a GitHub personal access token
+
+To download Ailet packages from GitHub Packages:
+
+1. Open GitHub.
+2. Click your avatar in the top-right corner.
+3. Select **Settings**.
+4. Open **Developer settings**.
+5. Open **Personal access tokens** → **Tokens (classic)**.
+6. Click **Generate new token**.
+7. Enable the `read:packages` scope.
+8. Click **Generate token**.
+9. Save the token: GitHub shows it once.
+
+Do not commit the token to the repository. Put the login and token in `gradle.properties` or environment variables.
+
+### How to add the Maven repository
+
+To let Gradle download the Ailet library, add the repository in one of these ways.
+
+**Option 1.** Add the repository in `settings.gradle`:
 
 ```groovy
 dependencyResolutionManagement {
@@ -71,22 +94,44 @@ dependencyResolutionManagement {
 }
 ```
 
-### 1.3. Add the following two dependencies to ``build.gradle`` file of the module
-
-[List of versions](https://github.com/intrtl/IRLib/packages/1361609/versions)
+**Option 2.** Add the repository in the root `build.gradle`:
 
 ```groovy
-// Ailet library
-implementation "com.ailet.android:lib:1.0.0" // Specify a specific version (list of versions at https://github.com/intrtl/IRLib/packages/1361609/versions)
-implementation "com.ailet.android:lib:+" // Latest available version
-// Optional: tech support module
-implementation "com.ailet.android:lib-feature-techsupport-intercom:1.0.0" // Specific version, matches the library version
-implementation "com.ailet.android:lib-feature-techsupport-intercom:+" // Latest available version
+allprojects {
+    repositories {
+        maven {
+            url 'https://maven.pkg.github.com/intrtl/irlib'
+            credentials {
+                username 'your GitHub username'
+                password 'personal GitHub access token'
+            }
+        }
+    }
+}
 ```
 
-### 1.4. Proguard rules
+### How to add dependencies
 
-```kotlin
+To add the library, put the dependency in the module `build.gradle`. Use a version from the [version list](https://github.com/intrtl/IRLib/packages/1361609/versions):
+
+```groovy
+implementation "com.ailet.android:lib:1.0.0"
+```
+
+A dynamic `+` version pulls the latest package and can break the build with no code change. For production builds, pin a specific version.
+
+To enable the tech support module, add a dependency with the same version as the library:
+
+```groovy
+implementation "com.ailet.android:lib-feature-techsupport-intercom:1.0.0"
+```
+
+### ProGuard rules
+
+To keep obfuscation from breaking the library, add this to `proguard-rules.pro`:
+
+```proguard
+-keep class com.ailet.** { *; }
 -keep class com.ailet.lib3.** { *; }
 -keep interface com.ailet.lib3.** { *; }
 -keep enum com.ailet.lib3.** { *; }
@@ -97,8 +142,8 @@ implementation "com.ailet.android:lib-feature-techsupport-intercom:+" // Latest 
 
 -keepnames class com.ailet.lib3.** { *; }
 -keepattributes *Annotation*
-#
-## Правила для Gson
+-keepattributes Signature
+
 -keep class com.google.gson.** { *; }
 -keep class sun.misc.Unsafe { *; }
 -keep interface com.google.gson.TypeAdapter
@@ -106,16 +151,11 @@ implementation "com.ailet.android:lib-feature-techsupport-intercom:+" // Latest 
 -keep interface com.google.gson.JsonDeserializer
 
 -dontwarn com.ailet.lib3.**
-
--keepattributes Signature
--keepattributes *Annotation*
 ```
 
-## 2. Usage
+## How to initialize the library
 
-### 2.1. Initialization
-
-Before you start, you need to initialize the ``Ailet`` object in your ``Application`` heir:
+To start work, call `Ailet.initialize` in your `Application` subclass:
 
 ```kotlin
 class App : Application() {
@@ -123,165 +163,263 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        // modules of the library's optional functionality
         val features = setOf<AiletFeature>(
-                DefaultStockCameraFeature(), // standard camera module
-                IntercomTechSupportManager(this), // technical support module
-                HostAppInstallInfoProviderFeature(
-                        this,
-                        BuildConfig.VERSION_NAME,
-                        BuildConfig.VERSION_CODE,
-                        AiletLibInstallInfo
-                ) // identification module (will help in diagnosing problems)
+            DefaultStockCameraFeature(),
+            IntercomTechSupportManager(this),
+            HostAppInstallInfoProviderFeature(
+                this,
+                BuildConfig.VERSION_NAME,
+                BuildConfig.VERSION_CODE,
+                AiletLibInstallInfo
+            )
         )
 
-        // initial authorization token provided by the Ailet team
         val accessToken = "..."
-        
-        // initializing the Ailet Lib with your token and selected modules
+
         Ailet.initialize(this, accessToken, features)
     }
 }
 ```
 
-### 2.2. Usage
+Modules in `features` are optional:
 
-After initialization, a single library client ``AiletClient`` becomes available to you. Now, you can use it to call library's methods:
+- `DefaultStockCameraFeature` — stock camera;
+- `IntercomTechSupportManager` — tech support;
+- `HostAppInstallInfoProviderFeature` — build identity for diagnostics.
+
+After `initialize`, call methods through `Ailet.getClient()`.
+
+To keep the Ailet camera screen from closing right after it opens when camera permission is already granted, add this to `features`:
+
+```kotlin
+DefaultAiletPermissionsFeature(
+    excludedPermissions = setOf(AiletPermissionsFeature.Exclude.CAMERA)
+)
+```
+
+## How to call methods
+
+A method call returns `AiletCall`. Then run it asynchronously with `execute()` or synchronously with `executeBlocking()`.
+
+Asynchronous call:
 
 ```kotlin
 Ailet.getClient()
+    .setPortal(portalName)
+    .execute({ result ->
+        when (result) {
+            // handle the result
+        }
+    }, { throwable ->
+        // handle the error
+    })
 ```
 
-## 3. Methods
+Synchronous call. You choose the execution thread:
 
-Since version 3.0, the ``IntRtl`` library client class has been marked as deprecated. 
-Instead, you need to use an instance of ``AiletClient`` class.
-The methods of the new client conceptually correspond to
-[methods](https://github.com/intrtl/AiletLibraryExamples/blob/master/Android/IrLibExample/readme_en.md) of the deprecated one:
+```kotlin
+val result = Ailet.getClient()
+    .setPortal(portalName)
+    .executeBlocking()
+```
 
-Method  | Description
---- | ---
-[init]() | Initializing the library, authorizing the user, and loading catalogs.
-[getServers]() | Obtaining the list of available servers.
-[start]() | Starting the visit.
-[getReports]() | Returning the report on the specified visit.
-[showSummaryReport]() | Summary report on the specified visit.
-[setPortal]() | Choosing a portal to work with.
-[requestSyncCatalogs]() | Downloading the catalog of the selected portal.
+In Java, parameters have no default values. Pass every argument explicitly:
 
-For the convenience of switching to a new client, ``replaceWith`` blocks have been added to the Deprecated annotation of each ``IntRtl`` method, allowing you to automatically replace the old method with a new one using Android Studio prompts.
+```java
+Ailet.getClient().init(
+    "login",
+    "password",
+    null,
+    false,
+    null,
+    false
+).execute(
+    result -> {
+        // handle the result
+        return null;
+    },
+    throwable -> {
+        // handle the error
+        return null;
+    },
+    () -> {
+        // call completed
+        return null;
+    }
+);
+```
 
-However, there are several significant differences between the old and new clients:
+## On-device recognition (Palomna)
 
-1. The client's methods are no longer blocking. Calling each of them returns an object ``AiletCall``, which, in turn, can be executed either synchronously using the ``executeBlocking()`` method, or asynchronously using the ``execute()`` method.
+Some Ailet builds can recognize photos on the device. If your build does not include this, skip the “Palomna build” notes.
 
-    Up to version 3.0.0:
+To download models, classes, and catalogs in advance, call [`syncPalomna()`](#syncpalomna).
 
-    ```kotlin
-    client.setPortal(portalName)
-    ```
+## Method reference
 
-    Starting from version 3.0.0:
+| Method | What it does |
+| --- | --- |
+| [`init`](#init) | Authorizes the user, starts the library, and downloads catalogs |
+| [`getServers`](#getservers) | Returns the list of available portals |
+| [`start`](#start) | Starts visit shooting |
+| [`getReports`](#getreports) | Returns a visit report |
+| [`showSummaryReport`](#showsummaryreport) | Opens a summary visit report |
+| [`setPortal`](#setportal) | Sets the active portal |
+| [`requestSyncCatalogs`](#requestsynccatalogs) | Downloads catalogs |
+| [`showVisit`](#showvisit) | Opens visit photos |
+| [`finishVisit`](#finishvisit) | Finishes the visit |
+| [`logout`](#logout) | Signs the user out |
+| [`getTotalSyncStat`](#gettotalsyncstat) | Returns visit synchronization stats |
+| [`syncPalomna`](#syncpalomna) | Downloads models and catalogs for on-device recognition |
 
-    ```kotlin
-    Ailet.getClient()
-            .setPortal(portalName)
-            .execute({ result -> 
-                when(result) {
-                    // result processing
-                }
-            }, { throwable -> 
-                // error handling
-            })
-    ```
-2. Blocking execution of methods is also possible, but in this case the responsibility for choosing the correct execution flow falls on the library user.
+To [migrate from `IntRtl`](#migrating-from-intrtl), use `AiletClient`.
 
-    ```kotlin
-    val result = Ailet.getClient()
-            .setPortal(portalName)
-            .executeBlocking()
-    ```
+### getServers()
 
-### 3.1 The getServers() method. List of available servers
+`getServers()` returns a list of `AiletServer` servers. Call it only in multiportal mode. Then pass the selected server to `init()`.
 
-The method returns a list of servers (AiletServer) that can be used in ``init`` method. The method is optional and is only necessary for the multiport mode.
-
-Parameter | Type | Description | Required | By default
----------|-----|----------|:---------:|:-----------------:
-login           |String      | The user's login in the Ailet system.      | + | 
-password        |String      | The user's password in the Ailet system.     | + | 
-externalUserId  |String      | External user ID (user ID from the external system). | | null 
-
-### 3.2 The init() method. Initialization of the library
-
-This method is responsible for authorizing the user in the library, as well as for initializing the Ailet Lib itself and loading catalogs necessary for the module to work.
-
-Parameter | Type | Description | Required | By default
----------|-----|----------|:---------:|:-----------------:
-login           |String      | The user's login in the Ailet system.      | + | 
-password        |String      | The user's password in the Ailet system.     | + | 
-externalUserId  |String      | External user ID (user ID from the external system). | | null  
-multiPortalMode |Boolean     | Multiportality support.            | | true 
-server          |AiletServer | The server to which you are logging in.     | | null 
-isNeedSyncCatalogs|Boolean | Flag for the need to synchronize catalogs.  | | true
-
-
-### 3.3 The start() method. The beginning of the visit
-
-The method starts photoshooting screen during the visit.
-
-Parameter | Type | Description | Required | By default
----------|-----|----------|:-:|:-:
-storeId         |AiletMethodStart.StoreId      | External identifier of the point of sale.        | + | 
-externalVisitId |String      | External visit ID.     |  | null
-sceneGroupId    |Int         | ID of the scene group. |  | null 
-taskId          |String      | External task ID.      |  | null 
-visitType       |String      | Type of visit (before/after merchandising).         | | null 
-
-### 3.4 The getReports() method. Getting a report on the visit
-
-The method returns a report on the visit in the `json` format ([see example](#4-sample-report)).
-
-Parameter | Type | Description | Required | By default
----------|-----|----------|:-:|:-:
-externalVisitId |String | External visit ID | + | 
-taskId          |String | External task ID. |   | null 
-visitType       |String | Type of visit (before/after merchandising).  | | null 
-
-### 3.5 The showSummaryReport() method. Displaying a summary report on the visit
-
-The method opens the screen for viewing the summary report on the visit.
-
-Parameter | Type | Description | Required | By default
----------|-----|----------|:-:|:-:
-externalVisitId |String | External visit ID | + |  
-taskId          |String | External task ID. |   | null 
-visitType       |String | Type of visit (before/after merchandising). | | null 
-
-### 3.6 The setPortal() method. Choosing the active portal
-
-The method is used to install the current portal in multi-portal mode.
-
-Parameter | Type | Description | Required 
----------|-----|----------|:-:
-portalName | String |Portal ID | + 
-
-### 3. The requestSyncCatalogs() method. Downloading catalogs
-
-The method is needed to load the catalog of the selected portal in multiportal mode.
-
-Parameter | Type | Description | Default
----------|-----|----------|:-:
-syncMode | AiletMethodSyncCatalogs.SyncMode | AiletMethodSyncCatalogs.SyncMode.EAGER - loading all catalogs </br>AiletMethodSyncCatalogs.SyncMode.SOFT - loading only mandatory catalogs | AiletMethodSyncCatalogs.SyncMode.EAGER
-strategy | AiletMethodSyncCatalogs.Strategy | AiletMethodSyncCatalogs.Strategy.Schedule - queue the loading of catalogs </br>AiletMethodSyncCatalogs.Strategy.SyncRightNow - synchronize immediately | AiletMethodSyncCatalogs.Strategy.Schedule
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `login` | `String` | Yes | — | User login in Ailet |
+| `password` | `String` | Yes | — | User password in Ailet |
+| `externalUserId` | `String` | No | `null` | External user ID |
 
 **Errors**
 
-Error | Error text | Description
----------|----------|----------
-Throwable | Unauthorized | Not authorized
+| Error | Description |
+| --- | --- |
+| `BackendApiException` | Server error with an [HTTP status](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) |
 
-#### Example of loading catalogs in multiportal mode
+### init()
+
+`init()` authorizes the user, starts the library, and downloads catalogs. It can also start the synchronization service.
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `login` | `String` | Yes | — | User login in Ailet |
+| `password` | `String` | Yes | — | User password in Ailet |
+| `externalUserId` | `String` | No | `null` | External user ID |
+| `multiPortalMode` | `Boolean` | No | `true` | Enable multiportal mode |
+| `server` | `AiletServer` | No | `null` | Server to sign in to |
+| `isNeedSyncCatalogs` | `Boolean` | No | `true` | Sync catalogs on sign-in |
+
+**Errors**
+
+| Error | Error text | Description |
+| --- | --- | --- |
+| `DataInconsistencyException` | `Current auth state data is null` | Authentication data is invalid |
+| `IllegalStateException` | `Inconsistency! server is null` | Server is empty |
+| `IllegalStateException` | `No portals available` | No portals available |
+| `BackendApiException` | — | Server error with an [HTTP status](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) |
+| Other exception types | — | Internal library error. Contact support |
+
+### start()
+
+`start()` starts shooting for a visit.
+
+> **On-device (Palomna build):** if models and classes are downloaded, photos are processed on the device when there is no internet.
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `storeId` | `AiletMethodStart.StoreId` | Yes | — | External store ID |
+| `externalVisitId` | `String` | No | `null` | External visit ID |
+| `sceneGroupId` | `Int` | No | `null` | Scene group ID |
+| `taskId` | `String` | No | `null` | External task ID |
+| `visitType` | `String` | No | `null` | Visit type (`before`, `after`) |
+| `visitUuid` | `String` | No | `null` | Internal visit ID |
+| `retailTaskIterationUuid` | `String` | No | `null` | Iteration ID (retail) |
+| `retailTaskId` | `String` | No | `null` | Task ID (retail) |
+| `retailTaskActionId` | `String` | No | `null` | Action ID (retail) |
+| `sceneTypes` | `List` | No | `listOf()` | List of scene types |
+| `launchConfig` | `LaunchConfig` | No | `AiletMethodStart.LaunchConfig()` | Launch configuration |
+
+**Errors**
+
+| Error | Error text | Description |
+| --- | --- | --- |
+| `Throwable` | `Uneditable(historical) visit` | The visit is finished and cannot be edited |
+| `IllegalStateException` | `Inconsistent AiletClient state: (Unknown, Warning, Error)` | Inconsistent client state |
+| `Throwable` | `Unauthorized` | User is not authorized |
+
+### getReports()
+
+`getReports()` returns a visit report as JSON. See the [report format](#report-example).
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `externalVisitId` | `String` | Yes | — | External visit ID |
+| `taskId` | `String` | No | `null` | External task ID |
+| `visitType` | `String` | No | `null` | Visit type (`before`, `after`) |
+
+**Errors**
+
+| Error | Error text | Description |
+| --- | --- | --- |
+| `AiletException` | `Visit with externalId [externalId] is not found` | Visit with this ID was not found |
+| `OnDeviceNotAvailableException` | `On-device recognition not available` | **(Palomna build)** On-device recognition is unavailable: no network and models are not downloaded |
+
+> **On-device (Palomna build):** the `result` and `report.result` fields also include:
+> - `source`: `"online"` if every photo was recognized on the server, or `"on-device"` if at least one photo was recognized only locally;
+> - `completed_on_device`: number of photos recognized on-device.
+
+### showSummaryReport()
+
+`showSummaryReport()` opens the summary visit report screen.
+
+> **On-device (Palomna build):** the screen shows on-device recognition data.
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `externalVisitId` | `String` | Yes | — | External visit ID |
+| `taskId` | `String` | No | `null` | External task ID |
+| `visitType` | `String` | No | `null` | Visit type (`before`, `after`) |
+
+**Errors**
+
+| Error | Error text | Description |
+| --- | --- | --- |
+| `Throwable` | `Unauthorized` | User is not authorized |
+| `IllegalArgumentException` | `No store for externalId [externalId]` | No store with this external ID |
+| `IllegalArgumentException` | `No store for storeId [storeId]` | No store with this ID |
+| `IllegalArgumentException` | `No visit for summary report request $param found` | Visit for the summary report was not found |
+| `IllegalArgumentException` | `Incorrect historical visit params` | Invalid parameters for a finished visit |
+| `BackendApiException` | — | Server error with an [HTTP status](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) |
+| `RuntimeException` | `No visit/Offline` | No visit, the device is offline |
+
+### setPortal()
+
+`setPortal()` sets the current portal in multiportal mode.
+
+> **On-device (Palomna build):** when you switch portals, on-device recognition settings for that portal are saved and applied. After switching, call `syncPalomna()` if models for the portal are not downloaded yet.
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `portalName` | `String` | Yes | Portal ID |
+
+**Errors**
+
+| Error | Error text | Description |
+| --- | --- | --- |
+| `Throwable` | `Unauthorized` | User is not authorized |
+| `IllegalArgumentException` | `No [server] found in local portals list` | Server was not found in the local portal list |
+| `AiletException` | `no [server] in servers list` | Server is not in the list |
+
+### requestSyncCatalogs()
+
+`requestSyncCatalogs()` downloads catalogs for the selected portal in multiportal mode.
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `syncMode` | `AiletMethodSyncCatalogs.SyncMode` | No | `AiletMethodSyncCatalogs.SyncMode.EAGER` | `EAGER` — all catalogs. `SOFT` — required catalogs only |
+| `strategy` | `AiletMethodSyncCatalogs.Strategy` | No | `AiletMethodSyncCatalogs.Strategy.Schedule` | `Schedule` — queue the download. `SyncRightNow` — sync immediately |
+
+**Errors**
+
+| Error | Error text | Description |
+| --- | --- | --- |
+| `Throwable` | `Unauthorized` | User is not authorized |
+
+To download catalogs for every portal:
 
 ```kotlin
 Ailet.getClient()
@@ -292,419 +430,251 @@ Ailet.getClient()
     )
     .execute({ result ->
         runBlocking {
-            async(Dispatchers.Default) {
-                result.servers.forEach { server ->
-                    Ailet.getClient().setPortal(
-                        portalName = server.name
-                    ).executeBlocking()
-                    
-                    Ailet.getClient().requestSyncCatalogs(
-                        syncMode = AiletMethodSyncCatalogs.SyncMode.EAGER,
-                        strategy = AiletMethodSyncCatalogs.Strategy.SyncRightNow
-                    ).executeBlocking()
-                }
-            }.await()
-            
-            //Actions performed after loading all catalogs
-    }, { })
+            result.servers.forEach { server ->
+                Ailet.getClient().setPortal(
+                    portalName = server.name
+                ).executeBlocking()
+
+                Ailet.getClient().requestSyncCatalogs(
+                    syncMode = AiletMethodSyncCatalogs.SyncMode.EAGER,
+                    strategy = AiletMethodSyncCatalogs.Strategy.SyncRightNow
+                ).executeBlocking()
+            }
+        }
+        // actions after all catalogs are downloaded
+    }, { throwable ->
+        // handle the error
+    })
 ```
 
+### showVisit()
 
-## 4. Sample report
+`showVisit()` opens the visit photo screen. The first photo opens.
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `externalVisitId` | `String` | Yes | — | External visit ID |
+| `taskId` | `String` | No | `null` | External task ID |
+| `visitType` | `String` | No | `null` | Visit type (`before`, `after`) |
+
+**Errors**
+
+| Error | Error text | Description |
+| --- | --- | --- |
+| `Throwable` | `Unauthorized` | User is not authorized |
+| `IllegalArgumentException` | `No visit with id: [visitId]` | Visit was not found |
+| `IndexOutOfBoundsException` | `No photos in visit with id: [$visitId]` | The visit has no photos |
+| `RuntimeException` | `No visit/Offline` | No local visit, the device is offline. The visit cannot be checked on the server |
+| `BackendApiException` | — | Server error with an [HTTP status](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) |
+
+### finishVisit()
+
+`finishVisit()` closes the visit. After that the visit is view-only.
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `externalVisitId` | `String` | Yes | — | External visit ID |
+
+**Errors**
+
+| Error | Error text | Description |
+| --- | --- | --- |
+| `Throwable` | `Unauthorized` | User is not authorized |
+| `AiletException` | `Visit with externalId [externalVisitId] is already finished` | The visit is already finished |
+| `AiletException` | `Visit with externalId [externalVisitId] is not found` | Visit was not found |
+
+### logout()
+
+`logout()` signs the user out and clears service data.
+
+> **On-device (Palomna build):** if on-device recognition is enabled in mobile settings, the library deletes downloaded models, classes, and catalogs. This happens only if the next `init()` runs for a different user.
+
+### getTotalSyncStat()
+
+Available in version 4.17.3 and later. The new `source` and `completed_on_device` fields exist in the Palomna build.
+
+`getTotalSyncStat()` returns photo statistics and starts the synchronization service if it is stopped. The result is a JSON string.
+
+> **On-device (Palomna build):** each `items` element and `total_stat` also include `source` (`online` / `on-device`) and `completed_on_device`.
+
+**Response example**
 
 ```json
 {
-    "photosCounter": 0,
-    "scenesCounter": 0,
-    "notDetectedPhotosCounter": 0,
-    "notDetectedScenesCounter": 0,
-    "store_id": "1",
-    "user_id": "26950",
-    "external_user_id": "1",
-    "install_id": "GEH3Z5CP",
-    "local_visit_id": "4d18faba141e8-80c51538",
-    "internal_visit_id": "4d18faba141e8-80c51538",
-    "visit_id": "qqq",
-    "status": "RESULT_EMPTY",
-    "result": {
-        "visit_id": "2",
-        "total_photos": 0,
-        "sended_photos": 0,
-        "code": "RESULT_OK",
-        "codeInt": 1,
-        "message": "Successfully processed"
-    },
-    "photos": {
-        "e4ef7672014924-def3dccc-PHOTO-000001": {
-            "error": {
-                "code": "RESULT_OK",
-                "codeInt": 1,
-                "message": "Successfully processed"
-            },
-            "products": [
-                {
-                    "product_id": "00fc4c31-a332-4a6b-b219-6dceb80e245d",
-                    "facing": 1,
-                    "facing_group": 1,
-                    "price": 0,
-                    "price_type": 0,
-                    "category_id": "5e5236ee77ac4-7319",
-                    "name": "Village house, Cream pit.erased.20%, Tetra, .480"
-                },
-                {
-                    "product_id": "147f7d0e-35c3-4edb-aba1-e31084406494",
-                    "facing": 4,
-                    "facing_group": 0,
-                    "price": 14.99,
-                    "price_type": 1,
-                    "category_id": "5e5236ee77ac4-7319",
-                    "name": "Ermigurt 3,2%, Cup, .100"
-                }
-            ],
-            "scene_type": "Warm shelf",
-            "scene_id": "e4ef7672014924-def3dccc-SCENE-000001",
-            "image_path": "/data/user/0/com.intrtl.lib2test/files/files/1/19/19f/19f2/19f2e/19f2e39d0991e36585bad2ea58ee0e0f.jpg",
-            "image_url": "https://dairy-demo.intrtl.com/api/photo_raw/2023/01/17/e4ef7672014924-def3dccc/2023-01-17-15-44-30-2885-o.jpg",
-            "task_id": "67"
-        },
-        "e4ef7672014924-def3dccc-PHOTO-000002": {
-            "error": {
-                "code": "RESULT_OK",
-                "codeInt": 1,
-                "message": "Successfully processed"
-            },
-            "products": [
-                {
-                    "product_id": "00fc4c31-a332-4a6b-b219-6dceb80e245d",
-                    "facing": 2,
-                    "facing_group": 2,
-                    "price": 0,
-                    "price_type": 0,
-                    "category_id": "5e5236ee77ac4-7319",
-                    "name": "Village house, Cream pit.erased.20%, Tetra, .480"
-                },
-                {
-                    "product_id": "147f7d0e-35c3-4edb-aba1-e31084406494",
-                    "facing": 6,
-                    "facing_group": 2,
-                    "price": 14.99,
-                    "price_type": 1,
-                    "category_id": "5e5236ee77ac4-7319",
-                    "name": "Ermigurt 3,2%, Cup, .100"
-                }
-            ],
-            "scene_type": "Cold shelf",
-            "scene_id": "e4ef7672014924-def3dccc-SCENE-000002",
-            "image_path": "/data/user/0/com.intrtl.lib2test/files/files/4/4c/4c9/4c9d/4c9d1/4c9d1afd71269a5e08791f963938e5f3.jpg",
-            "image_url": "https://dairy-demo.intrtl.com/api/photo_raw/2023/01/17/e4ef7672014924-def3dccc/2023-01-17-15-44-47-4064-o.jpg",
-            "task_id": "67"
-        },
-        "e4ef7672014924-def3dccc-PHOTO-000004": {
-            "error": {
-                "code": "RESULT_OK",
-                "codeInt": 1,
-                "message": "Successfully processed"
-            },
-            "products": [
-                {
-                    "product_id": "6156f4da52105-4578",
-                    "facing": 1,
-                    "facing_group": 0,
-                    "price": 59.9,
-                    "price_type": 1,
-                    "category_id": "5e5236ee77ac4-7319",
-                    "name": "Fruttis, cup, .115"
-                },
-                {
-                    "product_id": "6156f545c20df-5885",
-                    "facing": 1,
-                    "facing_group": 1,
-                    "price": 28.99,
-                    "price_type": 0,
-                    "category_id": "5e5236ee77ac4-7319",
-                    "name": "Fruttis 8% , cup, .115"
-                }
-            ],
-            "scene_type": "Cold shelf",
-            "scene_id": "e4ef7672014924-def3dccc-SCENE-000002",
-            "image_path": "/data/user/0/com.intrtl.lib2test/files/files/7/76/767/767c/767c3/767c32d09dc3617bb1c049378ccdb7b7.jpg",
-            "image_url": "https://dairy-demo.intrtl.com/api/photo_raw/2023/01/17/e4ef7672014924-def3dccc/2023-01-17-16-37-46-9543-o.jpg",
-            "task_id": "67"
-        },
-        "e4ef7672014924-def3dccc-PHOTO-000005": {
-            "error": {
-                "code": "RESULT_OK",
-                "codeInt": 1,
-                "message": "Successfully processed"
-            },
-            "products": [],
-            "scene_type": "Cold shelf",
-            "scene_id": "e4ef7672014924-def3dccc-SCENE-000002",
-            "image_path": "/data/user/0/com.intrtl.lib2test/files/files/7/7d/7da/7da2/7da27/7da27907aa428fbe3979764876eec411.jpg",
-            "image_url": "https://dairy-demo.intrtl.com/api/photo_raw/2023/01/17/e4ef7672014924-def3dccc/2023-01-17-16-44-31-8028-o.jpg",
-            "task_id": "67"
-        }
-    },
-    "assortment_achievement": [
+    "items": [
         {
-            "brand_id": "de548597-55c3-49bf-8d17-9a29c86929b1",
-            "brand_name": "Actimel",
-            "id": "7e132a93-703d-11e7-a5c2-000d3a250e47",
-            "facing_fact": 0,
-            "facing_plan": 1,
-            "facing_real": 0,
-            "price": 0,
-            "price_type": 0,
-            "name": "Actimel, cherry, bottle .600",
-            "product_category_id": "5e5236ee77ac4-7319",
-            "category_name": "OTHER_H"
+            "visit_id": "3",
+            "source": "online",
+            "visit_external_id": "156r459",
+            "total_photos": 10,
+            "sent_photos": 10,
+            "completed_photos": 10,
+            "completed_on_device": 2,
+            "code": "RESULT_OK",
+            "code_int": 1,
+            "message": "Processed successfully"
         },
         {
-            "brand_id": "de548597-55c3-49bf-8d17-9a29c86929b1",
-            "brand_name": "Actimel",
-            "id": "6796ad60-50e9-465b-ae6c-3a31a15f3d19",
-            "facing_fact": 0,
-            "facing_plan": 1,
-            "facing_real": 0,
-            "price": 0,
-            "price_type": 0,
-            "name": "Actimel,cherry, bottle .100",
-            "product_category_id": "5e5236ee77ac4-7319",
-            "category_name": "OTHER_H"
+            "visit_id": "2",
+            "source": "on-device",
+            "visit_external_id": "156r46",
+            "total_photos": 10,
+            "sent_photos": 1,
+            "completed_photos": 0,
+            "completed_on_device": 9,
+            "code": "IN_PROGRESS",
+            "code_int": 16,
+            "message": "Synchronization in progress"
         }
     ],
-    "assortment_achievement_by_metrics": [
-        {
-            "products": [
-                {
-                    "brand_id": "de548597-55c3-49bf-8d17-9a29c86929b1",
-                    "brand_name": "Actimel",
-                    "id": "7e132a93-703d-11e7-a5c2-000d3a250e47",
-                    "facing_fact": 0,
-                    "facing_plan": 1,
-                    "facing_real": 0,
-                    "price": 0,
-                    "price_type": 0,
-                    "name": "Actimel, cherry, bottle .600",
-                    "product_category_id": "5e5236ee77ac4-7319",
-                    "category_name": "OTHER_H"
-                },
-                {
-                    "brand_id": "de548597-55c3-49bf-8d17-9a29c86929b1",
-                    "brand_name": "Actimel",
-                    "id": "6796ad60-50e9-465b-ae6c-3a31a15f3d19",
-                    "facing_fact": 0,
-                    "facing_plan": 1,
-                    "facing_real": 0,
-                    "price": 0,
-                    "price_type": 0,
-                    "name": "Actimel, cherry, bottle .100",
-                    "product_category_id": "5e5236ee77ac4-7319",
-                    "category_name": "OTHER_H"
-                }
-            ],
-            "assortment_achievement_name": "General"
-        }
-    ],
-    "share_shelf": {
-        "share_shelf_by_visit": [
-            {
-                "plan": 0,
-                "percent": 0,
-                "value": 0,
-                "value_previous": 0,
-                "numerator": 0,
-                "denominator": 72
-            }
-        ],
-        "share_shelf_by_macrocategories": [
-            {
-                "facing": "72.0",
-                "product_macro_category_id": "5e5236ee77ac4-7319",
-                "product_macro_category_name": "OTHER_H",
-                "value": 72,
-                "percent": 0,
-                "matched": 0
-            }
-        ],
-        "share_shelf_by_categories": [
-            {
-                "facing": "72.0",
-                "macro_category_id": "5e5236ee77ac4-7319",
-                "product_category_id": "5e5236ee77ac4-7319",
-                "product_category_name": "OTHER_H",
-                "value": 72,
-                "percent": 0,
-                "matched": 0
-            }
-        ],
-        "share_shelf_by_brands": [
-            {
-                "facing": "0.0",
-                "product_category_id": "5e5236ee77ac4-7319",
-                "product_category_name": "OTHER_H",
-                "brand_id": "ed9c3c78-2ecb-4373-935a-21c3548bb1f5",
-                "brand_name": "Ermigurt",
-                "is_own": 0,
-                "value": 0,
-                "percent": 0
-            },
-            {
-                "facing": "0.0",
-                "product_category_id": "5e5236ee77ac4-7319",
-                "product_category_name": "OTHER_H",
-                "brand_id": "1f7e652d-a65e-4297-a50e-008387b592e0",
-                "brand_name": "Fruttis",
-                "is_own": 0,
-                "value": 0,
-                "percent": 0
-            }
-        ],
-        "share_shelf_type": "facing_cm",
-        "share_shelf_name": "sos_2"
-    },
-    "share_shelf_by_metrics": [
-        {
-            "share_shelf_by_visit": [
-                {
-                    "plan": 0,
-                    "percent": 0,
-                    "value": 0,
-                    "value_previous": 0,
-                    "numerator": 0,
-                    "denominator": 72
-                }
-            ],
-            "share_shelf_by_macrocategories": [
-                {
-                    "facing": "72.0",
-                    "product_macro_category_id": "5e5236ee77ac4-7319",
-                    "product_macro_category_name": "OTHER_H",
-                    "value": 72,
-                    "percent": 0,
-                    "matched": 0
-                }
-            ],
-            "share_shelf_by_categories": [
-                {
-                    "facing": "72.0",
-                    "macro_category_id": "5e5236ee77ac4-7319",
-                    "product_category_id": "5e5236ee77ac4-7319",
-                    "product_category_name": "OTHER_H",
-                    "value": 72,
-                    "percent": 0,
-                    "matched": 0
-                }
-            ],
-            "share_shelf_by_brands": [
-                {
-                    "facing": "0.0",
-                    "product_category_id": "5e5236ee77ac4-7319",
-                    "product_category_name": "OTHER_H",
-                    "brand_id": "ed9c3c78-2ecb-4373-935a-21c3548bb1f5",
-                    "brand_name": "Ermigurt",
-                    "is_own": 0,
-                    "value": 0,
-                    "percent": 0
-                },
-                {
-                    "facing": "0.0",
-                    "product_category_id": "5e5236ee77ac4-7319",
-                    "product_category_name": "OTHER_H",
-                    "brand_id": "1f7e652d-a65e-4297-a50e-008387b592e0",
-                    "brand_name": "Fruttis",
-                    "is_own": 0,
-                    "value": 0,
-                    "percent": 0
-                }
-            ],
-            "share_shelf_type": "facing_cm",
-            "share_shelf_name": "sos_2"
-        }
-    ],
-    "perfectstore": {
-        "tasks": [
-            {
-                "kpis": [
-                    {
-                        "name": "OSA SKU",
-                        "metric_type": "osa_sku",
-                        "matrix_type": "general",
-                        "plan_value": 2,
-                        "fact_value": 1,
-                        "percentage": 0.5,
-                        "score_value": 1
-                    },
-                    {
-                        "name": "OSA Facing",
-                        "metric_type": "osa_facing",
-                        "matrix_type": "general",
-                        "plan_value": 3,
-                        "fact_value": 8,
-                        "percentage": 1,
-                        "score_value": 8
-                    }
-                ],
-                "questions": [
-                    {
-                        "index": 2,
-                        "type": "multiselect",
-                        "name": "Has the store a CSR zone?",
-                        "answers": [
-                            {
-                                "index": 1,
-                                "name": "yes",
-                                "point": 0
-                            }
-                        ]
-                    },
-                    {
-                        "index": 4,
-                        "type": "select",
-                        "name": "Has the store a CSR zone?",
-                        "answers": [
-                            {
-                                "index": 2,
-                                "name": "no",
-                                "point": 0
-                            }
-                        ]
-                    },
-                    {
-                        "index": 3,
-                        "type": "text",
-                        "name": "asdasd",
-                        "answers": [
-                            {
-                                "index": 1,
-                                "name": "123",
-                                "point": 0
-                            }
-                        ]
-                    }
-                ],
-                "id": "e4ef7a488012c1-98ec7589",
-                "name": "for testing",
-                "percentage": 10.9,
-                "total_score": 9
-            }
-        ],
-        "total_visit_score": 9
-    },
-    "visit_stats": {
-        "photo": {
-            "badQuality": 0,
-            "completed": 4,
-            "created": 0,
-            "deleted": 1,
-            "goodQuality": 4,
-            "retake": 0,
-            "sent": 0,
-            "sentWithError": 0,
-            "status": "RESULT_OK",
-            "uncompressed": 4,
-            "wait": 0
+    "total_stat": {
+        "total_photos": 20,
+        "sent_photos": 11,
+        "completed_photos": 10,
+        "completed_on_device": 11,
+        "current_problem": "Error sending photos to the server"
+    }
+}
+```
+
+### syncPalomna()
+
+`syncPalomna()` downloads and updates models, classes, and catalogs for on-device recognition without internet.
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `externalIds` | `List<String>` | No | `listOf()` | External store IDs |
+| `storeIds` | `List<Int>` | No | `listOf()` | Internal store IDs in the library |
+| `useMobile` | `Boolean` | No | `false` | Allow synchronization over mobile network |
+| `isAutoUpdate` | `Boolean` | No | `false` | Update models without asking the user |
+
+**Errors**
+
+| Error | Error text | Description |
+| --- | --- | --- |
+| `OnDeviceNotAvailableException` | `On-device not available` | On-device recognition is disabled in settings |
+| `OnDeviceDownloadMobileException` | `Cant download via mobile network` | Download over mobile network is forbidden (`useMobile = false`) |
+| `OnDeviceNoStoreException` | `Store not found` | Store was not found |
+| `Throwable` | `Unauthorized` | User is not authorized |
+
+When the Palomna download status changes, the library sends a broadcast with `intent.action = SYNC_PALOMNA_STATE`.
+
+| Extra | Description |
+| --- | --- |
+| `dataSetsProgress` | Model download progress |
+| `matricesProgress` | Matrix download progress |
+| `matricesTypesProgress` | Matrix type download progress |
+| `metricsProgress` | Metric download progress |
+| `imagesProgress` | Image download progress |
+
+## Broadcast message
+
+When the library receives all visit data, it sends a broadcast with `intent.action = com.ailet.app.BROADCAST_WIDGETS_RECEIVED` or `com.ailet.russia.BROADCAST_WIDGETS_RECEIVED`.
+
+On Android 13 and later, set the export flag: the message comes from the library as a separate component.
+
+To handle the message:
+
+```kotlin
+broadcastReceiver = object : BroadcastReceiver() {
+    override fun onReceive(context: Context, intent: Intent) {
+        parseBroadcastMessage(intent)
+    }
+}
+
+val intentFilter = IntentFilter(IR_BROADCAST_V3)
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+    registerReceiver(broadcastReceiver, intentFilter, Context.RECEIVER_EXPORTED)
+} else {
+    registerReceiver(broadcastReceiver, intentFilter)
+}
+
+private const val NOT_SET = "not set"
+private const val VISIT_ID = "visit_id"
+private const val INTERNAL_VISIT_ID = "internal_visit_id"
+private const val STORE_ID = "store_id"
+private const val TASK_ID = "task_id"
+private const val TOTAL_PHOTOS = "total_photos"
+private const val COMPLETED_PHOTOS = "completed_photos"
+private const val COMPLETED_ON_DEVICE = "completed_on_device"
+private const val SOURCE = "source"
+private const val RESULT = "result"
+
+private fun parseBroadcastMessage(intent: Intent) {
+    val extras = intent.extras
+    val visitId = extras?.getString(VISIT_ID, NOT_SET)
+    val internalVisitId = extras?.getString(INTERNAL_VISIT_ID, NOT_SET)
+    val storeId = extras?.getString(STORE_ID, NOT_SET)
+    val taskId = extras?.getString(TASK_ID, NOT_SET)
+    val totalPhotos = extras?.getInt(TOTAL_PHOTOS, 0)
+    val completedPhotos = extras?.getInt(COMPLETED_PHOTOS, 0)
+    val completedOnDevice = extras?.getInt(COMPLETED_ON_DEVICE, 0)
+    val source = extras?.getString(SOURCE, "online")
+    val result = extras?.getString(RESULT, null)
+
+    result?.let { uriString ->
+        try {
+            val fileFromUri = readFromUri(Uri.parse(uriString))
+        } catch (t: Throwable) {
+            t.printStackTrace()
         }
     }
 }
 ```
+
+`IR_BROADCAST_V3` is the action constant in your project. Use `com.ailet.app.BROADCAST_WIDGETS_RECEIVED` or `com.ailet.russia.BROADCAST_WIDGETS_RECEIVED` depending on the build.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `internal_visit_id` | `String` | Internal visit ID in Ailet |
+| `visit_id` | `String` | Visit ID |
+| `store_id` | `String` | Store ID |
+| `user_id` | `String` | User ID in Ailet |
+| `total_photos` | `Int` | Number of photos in the visit |
+| `completed_photos` | `Int` | Number of processed photos |
+| `completed_on_device` | `Int` | **(Palomna build)** Number of photos recognized on-device |
+| `source` | `String` | **(Palomna build)** Data source (`online` / `on-device`) |
+| `result` | `String` | `Uri` of the report file |
+
+## Migrating from IntRtl
+
+From version 3.0 the `IntRtl` client class is deprecated. Use `AiletClient`.
+
+The new client methods match the [legacy client methods](https://github.com/intrtl/AiletLibraryExamples/blob/master/Android/IrLibExample/readme.md#методы).
+
+Each deprecated `IntRtl` method has `ReplaceWith` in the `Deprecated` annotation. Android Studio can replace the old call with a new one from the hint.
+
+Differences in the new client:
+
+1. Methods do not block the thread. The call returns `AiletCall`. Then use `execute()` or `executeBlocking()`.
+2. With `executeBlocking()`, you choose the execution thread.
+
+Before version 3.0.0:
+
+```kotlin
+client.setPortal(portalName)
+```
+
+From version 3.0.0:
+
+```kotlin
+Ailet.getClient()
+    .setPortal(portalName)
+    .execute({ result ->
+        when (result) {
+            // handle the result
+        }
+    }, { throwable ->
+        // handle the error
+    })
+```
+
+## Report example
+
+The full JSON is in [report_exaple.json](./report_exaple.json).
+
+## Known issues
+
+### Gradle 8.x and obfuscation
+
+To keep a Gradle 8.x build from failing during obfuscation, check the rules in [ProGuard rules](#proguard-rules). Gradle 8.x needs a keep rule for the `com.ailet.**` package.
