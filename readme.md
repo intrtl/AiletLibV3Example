@@ -671,7 +671,7 @@ Ailet.getClient()
 
 ## Report example
 
-The full JSON is in [report_exaple.json](./report_exaple.json).
+The full JSON is in [report_example.json](./report_example.json).
 
 ## Known issues
 
